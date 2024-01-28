@@ -76,7 +76,7 @@ const MarketingPage = () => {
       {/* explore section */}
       <div className="flex flex-col items-center justify-center mx-8">
         <div className="my-16">
-          <h1 className="text-4xl text-[#546162] font-semibold">
+          <h1 className=" text-2xl text-center lg:text-4xl text-[#546162] font-semibold">
             Explore DeFi for the Real World
           </h1>
         </div>
@@ -97,7 +97,7 @@ const MarketingPage = () => {
               <div className="flex flex-col items-start gap-6">
                 <h1
                   className={cn(
-                    "text-2xl text-[#3d4445] text-start font-medium max-w-xs",
+                    " text-xl lg:text-2xl text-[#3d4445] text-start font-medium lg:max-w-xs",
                     font.className
                   )}
                 >
@@ -105,7 +105,7 @@ const MarketingPage = () => {
                 </h1>
                 <p
                   className={cn(
-                    "text-start text-muted-foreground text-sm max-w-md text-[#91A0A1]",
+                    "text-start text-muted-foreground text-xs lg:text-sm max-w-md text-[#91A0A1]",
                     font.className
                   )}
                 >
@@ -122,7 +122,7 @@ const MarketingPage = () => {
                       : "text-[#1F83F9]"
                   )}
                 >
-                  <h1 className="text-lg ">{item.buttonText}</h1>
+                  <h1 className=" text-md lg:text-lg ">{item.buttonText}</h1>
                   <ArrowUpRight className="" size={24} />
                 </span>
               </div>
@@ -133,8 +133,8 @@ const MarketingPage = () => {
 
       {/* newsletter */}
 
-      <div className="flex flex-col items-center gap-8 my-28">
-        <div className="flex  items-center gap-10">
+      <div className="flex flex-col items-center gap-8 my-16 mx-6 lg:my-28">
+        <div className="flex  items-center gap-2 lg:gap-10">
           <h1 className="text-2xl text-[#32393A] font-semibold">
             Say GM, we&apos;re listening
           </h1>
@@ -144,12 +144,12 @@ const MarketingPage = () => {
           </span>
         </div>
 
-        <div className="flex items-center gap-12 bg-[#E6F2F3] rounded-xl p-8">
-          <div>
+        <div className="flex flex-col lg:flex-row items-center gap-12 bg-[#E6F2F3] rounded-xl p-8">
+          <div className="flex flex-col items-center">
             <h3 className="text-lg font-medium text-[#32393A]">
               Suscribe to our newsletter
             </h3>
-            <p className="text-start max-w-sm text-muted-foreground">
+            <p className=" text-center lg:text-start lg:max-w-sm text-muted-foreground">
               Get insights, updates, and community highlights delivered straight
               to your inbox.
             </p>
@@ -157,10 +157,10 @@ const MarketingPage = () => {
 
           <div className="flex items-center">
             <Input
-              className="flex-1 px-12 py-7 rounded-full  focus-visible:border-0 focus-visible:ring-0"
+              className="flex-1 px-4  lg:px-12 py-5 md:py-7 rounded-full  focus-visible:border-0 focus-visible:ring-0"
               placeholder="me@example.com"
             />
-            <Button className="rounded-full bg-[#007A86] py-7 -ml-12">
+            <Button className="rounded-full bg-[#007A86] py-5 md:py-7 -ml-12">
               Subscribe
             </Button>
           </div>
