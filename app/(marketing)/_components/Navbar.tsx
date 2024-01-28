@@ -40,7 +40,13 @@ const Navbar = () => {
       {!isMobile ? (
         <div className="flex items-center justify-between mx-8 mt-4">
           <div>
-            <Image src="/logo6.svg" alt="logo" width={100} height={100} />
+            <Image
+              className="w-full"
+              src="/logo66.svg"
+              alt="logo"
+              width={100}
+              height={100}
+            />
           </div>
 
           <div className="flex items-center gap-6">
@@ -62,11 +68,12 @@ const Navbar = () => {
         </div>
       ) : (
         /// fix nav content for mobile view. fix also: suspending laoding the page till usemedia hook is done. ie, until ismobile is valid, page stays loading
+        // feat: implement lazy loading and newsletter
         <div className="flex items-center justify-between mx-8 mt-6">
           <div>
             <Image
-              className="w-auto"
-              src="/logo6.svg"
+              className="w-full"
+              src="/logo66.svg"
               alt="logo"
               width={100}
               height={100}
