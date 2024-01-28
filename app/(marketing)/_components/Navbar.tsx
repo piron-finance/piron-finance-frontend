@@ -61,10 +61,16 @@ const Navbar = () => {
           </div>
         </div>
       ) : (
-        /// fix nav content for mobile view
+        /// fix nav content for mobile view. fix also: suspending laoding the page till usemedia hook is done. ie, until ismobile is valid, page stays loading
         <div className="flex items-center justify-between mx-8 mt-6">
           <div>
-            <Image src="/logo6.svg" alt="logo" width={100} height={100} />
+            <Image
+              className="w-auto"
+              src="/logo6.svg"
+              alt="logo"
+              width={100}
+              height={100}
+            />
           </div>
           <div>
             <DropdownMenu>

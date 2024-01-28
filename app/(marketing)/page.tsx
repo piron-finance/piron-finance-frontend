@@ -1,12 +1,17 @@
 import React from "react";
 import Heading from "./_components/Heading";
 import Image from "next/image";
-import { DM_Sans } from "next/font/google";
+import { DM_Sans, EB_Garamond } from "next/font/google";
 import { cn } from "@/lib/utils";
-import { userClass } from "./constants/dummy";
+import { userClass, features } from "./constants/dummy";
 import { Button } from "@/components/ui/button";
+import { ArrowUpRight } from "lucide-react";
+import { BsDiscord, BsX } from "react-icons/bs";
+import { FaSquareXTwitter } from "react-icons/fa6";
+import { Input } from "@/components/ui/input";
 
 const font = DM_Sans({ subsets: ["latin"] });
+const font2 = EB_Garamond({ weight: "500", subsets: ["latin"] });
 
 const MarketingPage = () => {
   return (
@@ -19,13 +24,7 @@ const MarketingPage = () => {
         <h1 className={cn("text-4xl font-bold text-[#546162]", font.className)}>
           Why Piron?
         </h1>
-        <Image
-          src="/why6.svg"
-          layout="responsive"
-          alt="why"
-          width={834}
-          height={91}
-        />
+        <Image src="/why6.svg" alt="why" width={834} height={91} />
       </div>
 
       {/* user class */}
@@ -71,6 +70,100 @@ const MarketingPage = () => {
               </Button>
             </div>
           ))}
+        </div>
+      </div>
+
+      {/* explore section */}
+      <div className="flex flex-col items-center justify-center mx-8">
+        <div className="my-16">
+          <h1 className="text-4xl text-[#546162] font-semibold">
+            Explore DeFi for the Real World
+          </h1>
+        </div>
+
+        <div className="flex flex-col items-center gap-28">
+          {features.map((item, index) => (
+            <div
+              key={index}
+              className={cn(
+                "flex items-center gap-20",
+                index % 2 == 0 ? "flex-row" : "flex-row-reverse"
+              )}
+            >
+              <div>
+                <Image src={item.icon} alt="icon" width={294} height={100} />
+              </div>
+
+              <div className="flex flex-col items-start gap-6">
+                <h1
+                  className={cn(
+                    "text-2xl text-[#3d4445] text-start font-medium max-w-xs",
+                    font.className
+                  )}
+                >
+                  {item.title}
+                </h1>
+                <p
+                  className={cn(
+                    "text-start text-muted-foreground text-sm max-w-md text-[#91A0A1]",
+                    font.className
+                  )}
+                >
+                  {" "}
+                  {item.desc}
+                </p>
+                <span
+                  className={cn(
+                    "flex items-center",
+                    index == 0
+                      ? "text-[#007A86]"
+                      : index == 1
+                      ? "text-[#EF841F]"
+                      : "text-[#1F83F9]"
+                  )}
+                >
+                  <h1 className="text-lg ">{item.buttonText}</h1>
+                  <ArrowUpRight className="" size={24} />
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* newsletter */}
+
+      <div className="flex flex-col items-center gap-8 my-28">
+        <div className="flex  items-center gap-10">
+          <h1 className="text-2xl text-[#32393A] font-semibold">
+            Say GM, we&apos;re listening
+          </h1>
+          <span className="flex items-center gap-5">
+            <BsDiscord size={24} />
+            <FaSquareXTwitter size={24} />
+          </span>
+        </div>
+
+        <div className="flex items-center gap-12 bg-[#E6F2F3] rounded-xl p-8">
+          <div>
+            <h3 className="text-lg font-medium text-[#32393A]">
+              Suscribe to our newsletter
+            </h3>
+            <p className="text-start max-w-sm text-muted-foreground">
+              Get insights, updates, and community highlights delivered straight
+              to your inbox.
+            </p>
+          </div>
+
+          <div className="flex items-center">
+            <Input
+              className="flex-1 px-12 py-7 rounded-full  focus-visible:border-0 focus-visible:ring-0"
+              placeholder="me@example.com"
+            />
+            <Button className="rounded-full bg-[#007A86] py-7 -ml-12">
+              Subscribe
+            </Button>
+          </div>
         </div>
       </div>
     </div>
