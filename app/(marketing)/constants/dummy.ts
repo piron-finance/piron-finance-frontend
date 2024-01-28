@@ -34,3 +34,78 @@ export const features = [
     buttonText: "Participate Now",
   },
 ];
+
+export const footerLinks = [
+  {
+    title: "Features",
+    links: [
+      {
+        title: "Deals",
+        link: "/",
+      },
+      {
+        title: "Marketplace",
+        link: "/",
+      },
+      {
+        title: "Investment Clubs",
+        link: "/",
+      },
+      {
+        title: "Governance",
+        link: "/",
+      },
+    ],
+  },
+  {
+    title: "Company",
+    links: [
+      {
+        title: "About Us",
+        link: "/",
+      },
+      {
+        title: "Careers",
+        link: "/",
+      },
+      {
+        title: "FAQs",
+        link: "/",
+      },
+    ],
+  },
+  {
+    title: "Resources",
+    links: [
+      {
+        title: "Blog",
+        link: "/",
+      },
+      {
+        title: "Docs",
+        link: "/",
+      },
+      {
+        title: "Whitepaper",
+        link: "/",
+      },
+      {
+        title: "Brand kit",
+        link: "/",
+      },
+    ],
+  },
+  {
+    title: "Legal",
+    links: [
+      {
+        title: "Privacy Policy",
+        link: "/",
+      },
+      {
+        title: "Terms of Service",
+        link: "/",
+      },
+    ],
+  },
+];

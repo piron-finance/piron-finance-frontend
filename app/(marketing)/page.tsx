@@ -139,8 +139,8 @@ const MarketingPage = () => {
             Say GM, we&apos;re listening
           </h1>
           <span className="flex items-center gap-5">
-            <BsDiscord size={24} />
-            <FaSquareXTwitter size={24} />
+            <BsDiscord className="hover:cursor-pointer" size={24} />
+            <FaSquareXTwitter className="hover:cursor-pointer" size={24} />
           </span>
         </div>
 
