@@ -10,7 +10,9 @@ import {
   DropdownMenuContent,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+
 import { Menu } from "lucide-react";
+import Link from "next/link";
 
 const NavItems = [
   {
@@ -54,21 +56,26 @@ const Navbar = () => {
               {NavItems.map((item, index) => (
                 <li
                   key={index}
-                  className={cn("text-md text-[#546162]", font.className)}
+                  className={cn(
+                    "text-md text-[#546162] hover:cursor-pointer hover:text-[#007A86]",
+                    font.className
+                  )}
                 >
                   {item.name}
                 </li>
               ))}
             </ul>
 
-            <Button className="bg-[#007A86] rounded-full px-4" size="lg">
-              Launch App
-            </Button>
+            <Link href="/pools">
+              <Button className="bg-[#007A86] rounded-full px-4" size="lg">
+                Launch App
+              </Button>
+            </Link>
           </div>
         </div>
       ) : (
         /// fix nav content for mobile view. fix also: suspending laoding the page till usemedia hook is done. ie, until ismobile is valid, page stays loading
-        // feat: implement lazy loading and newsletter
+        // feat: implement lazy loading and newsletter. fix footer hover color
         <div className="flex items-center justify-between mx-8 mt-6">
           <div>
             <Image

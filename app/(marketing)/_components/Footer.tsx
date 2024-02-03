@@ -39,9 +39,9 @@ const Footer = () => {
 
       <div className=" flex lg:mx-24  border-t border-[#54A6AE]">
         <div className="flex gap-12 my-5">
-          <h3 className="text-base lg:text-lg text-white font-light">
+          <h2 className="text-base lg:text-lg text-white font-light">
             © {new Date().getFullYear()} Piron. All rights reserved.
-          </h3>
+          </h2>
 
           <span className="flex gap-8">
             <FaSquareXTwitter className="text-white text-2xl hover:text-black hover:cursor-pointer" />
