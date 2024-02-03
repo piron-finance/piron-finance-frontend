@@ -122,7 +122,9 @@ const MarketingPage = () => {
                       : "text-[#1F83F9]"
                   )}
                 >
-                  <h1 className=" text-md lg:text-lg ">{item.buttonText}</h1>
+                  <h1 className=" text-md lg:text-lg hover:cursor-pointer ">
+                    {item.buttonText}
+                  </h1>
                   <ArrowUpRight className="" size={24} />
                 </span>
               </div>
@@ -146,9 +148,9 @@ const MarketingPage = () => {
 
         <div className="flex flex-col lg:flex-row items-center gap-12 bg-[#E6F2F3] rounded-xl p-8">
           <div className="flex flex-col items-center">
-            <h3 className="text-lg font-medium text-[#32393A]">
+            <h2 className="text-lg font-medium text-[#32393A]">
               Suscribe to our newsletter
-            </h3>
+            </h2>
             <p className=" text-center lg:text-start lg:max-w-sm text-muted-foreground">
               Get insights, updates, and community highlights delivered straight
               to your inbox.
