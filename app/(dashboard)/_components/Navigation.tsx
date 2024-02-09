@@ -73,7 +73,7 @@ const Navigation = () => {
             {utilsNavItems.map((item, index) => (
               <li
                 key={index}
-                className="flex items-center gap-3 mx-6  text-gray-600 hover:text-[#007A86] hover:bg-gray-100 p-3 rounded-l-full cursor-pointer"
+                className="flex items-center gap-5 ml-5  text-gray-600 hover:text-[#007A86]  hover:bg-gray-100 p-3 rounded-l-full cursor-pointer"
               >
                 <Image src={item.icon} alt="icon" width={16} height={16} />
                 <span className="text-sm  font-light">{item.name}</span>
