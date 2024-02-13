@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/pagination";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import Footer from "../../_components/Footer";
 
 const getBgColorClass = (poolStatus: string) => {
   switch (poolStatus) {
@@ -40,12 +41,10 @@ const getTextColorClass = (poolStatus: string) => {
 
 const page = () => {
   return (
-    <div className="flex flex-col h-screen">
+    <div className="flex flex-col h-full">
       <Header />
 
-      {/* pool selection */}
-      <section>
-        {/* pool utils */}
+      <div>
         <div className="flex flex-col mx-4 my-12">
           <div className="flex flex-col my-4">
             <h1 className="text-2xl  text-gray-600">All Deals</h1>
@@ -69,9 +68,7 @@ const page = () => {
             </div>
           </div>
         </div>
-        {/* done */}
 
-        {/* pool selection card */}
         <div className="grid grid-cols-3 gap-2  mx-4">
           {cardItem.map((item, index) => (
             <>
@@ -151,35 +148,9 @@ const page = () => {
             </>
           ))}
         </div>
-        {/* done */}
+      </div>
 
-        <div className="my-6">
-          <Pagination>
-            <PaginationContent>
-              <PaginationItem>
-                <PaginationPrevious href="#" />
-              </PaginationItem>
-              <PaginationItem>
-                <PaginationLink href="#">1</PaginationLink>
-              </PaginationItem>
-              <PaginationItem>
-                <PaginationLink href="#" isActive>
-                  2
-                </PaginationLink>
-              </PaginationItem>
-              <PaginationItem>
-                <PaginationLink href="#">3</PaginationLink>
-              </PaginationItem>
-              <PaginationItem>
-                <PaginationEllipsis />
-              </PaginationItem>
-              <PaginationItem>
-                <PaginationNext href="#" />
-              </PaginationItem>
-            </PaginationContent>
-          </Pagination>
-        </div>
-      </section>
+      <Footer />
     </div>
   );
 };
