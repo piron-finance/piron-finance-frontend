@@ -1,6 +1,7 @@
 import React from "react";
 import Navigation from "./_components/Navigation";
 import Navbar from "./_components/Navbar";
+import Footer from "./_components/Footer";
 
 const MainLayout = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -10,7 +11,7 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
     >
       <Navigation />
 
-      <main className="flex flex-col w-full   h-screen overflow-y-auto ">
+      <main className="flex flex-col w-full   h-screen overflow-y-scroll ">
         <Navbar />
         {children}
       </main>
