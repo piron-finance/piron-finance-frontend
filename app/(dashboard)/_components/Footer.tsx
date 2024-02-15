@@ -30,11 +30,11 @@ const Footer = () => {
     <div className="">
       <Separator />
       <div className="flex items-center justify-between  p-6">
-        <div className="flex items-center gap-5 my-2">
+        <div className="grid grid-cols-2 md:flex gap-1 md:gap-5 my-2">
           {navItems.map((items, index) => (
-            <h1 className="text-muted-foreground text-sm" key={index}>
-              {items.name}
-            </h1>
+            <div key={items.name}>
+              <h1 className="text-muted-foreground text-sm">{items.name}</h1>
+            </div>
           ))}
         </div>
         <div className="flex items-center gap-8 text-muted-foreground">
