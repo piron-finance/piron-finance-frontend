@@ -11,10 +11,10 @@ const Navbar = () => {
   };
 
   return (
-    <div className="flex flex-col my-4 ">
-      <div className="flex flex-col mx-6">
-        <div>
-          <h1 className="text-4xl">Deals</h1>
+    <div className="flex flex-col my-4  ">
+      <div className="flex flex-col mx-6 ml-16 md:ml-12">
+        <div className="">
+          <h1 className=" text-2xl md:text-4xl">Deals</h1>
         </div>
         <div className="mt-10 ">
           <ul className="flex items-center h-full  gap-5 my-2">
