@@ -3,6 +3,7 @@ import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 import { ChevronsLeft, MenuIcon } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { useState, useRef, ElementRef, useEffect, SetStateAction } from "react";
 import { useMediaQuery } from "usehooks-ts";
 
@@ -10,7 +11,7 @@ const NavItems = [
   {
     name: "Portfolio",
     icon: "/icon1.svg",
-    path: "/pools",
+    path: "/portfolio",
   },
   {
     name: "Deals",
@@ -123,12 +124,12 @@ const Navigation = ({ isCollapsed, setIsCollapsed }: PageProps) => {
         <div className="flex flex-col items-center my-20">
           <ul className="flex flex-col gap-4 w-full ">
             {NavItems.map((item, index) => (
-              <div key={item.name}>
+              <Link href={item.path} key={item.name}>
                 <li className="flex items-center gap-5 ml-5  text-gray-600 hover:text-[#007A86]  hover:bg-gray-100 p-3 rounded-l-full cursor-pointer">
                   <Image src={item.icon} alt="icon" width={16} height={16} />
                   <span className="text-sm  font-light">{item.name}</span>
                 </li>
-              </div>
+              </Link>
             ))}
           </ul>
         </div>
