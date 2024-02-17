@@ -1,0 +1,38 @@
+export const portfolioData = [
+  {
+    assetImg: "/poolCards/cards5.svg",
+    assetName: "Prosperity climb portfolio capital. Soverign wealth fund",
+    value: "5000",
+    type: "Equity",
+    performance: "+300",
+    dividend: "12/32/64",
+    maturity: "12/32/64",
+  },
+  {
+    assetImg: "/poolCards/cards5.svg",
+    assetName: "Prosperity climb portfolio capital",
+    value: "5000",
+    type: "Equity",
+    performance: "+300",
+    dividend: "12/32/64",
+    maturity: "12/32/64",
+  },
+  {
+    assetImg: "/poolCards/cards5.svg",
+    assetName: "Prosperity climb portfolio capital",
+    value: "5000",
+    type: "Equity",
+    performance: "+300",
+    dividend: "12/32/64",
+    maturity: "12/32/64",
+  },
+  {
+    assetImg: "/poolCards/cards5.svg",
+    assetName: "Prosperity climb portfolio capital",
+    value: "5000",
+    type: "Equity",
+    performance: "+300",
+    dividend: "12/32/64",
+    maturity: "12/32/64",
+  },
+];

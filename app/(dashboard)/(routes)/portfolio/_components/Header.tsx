@@ -1,3 +1,4 @@
+import { Eye } from "lucide-react";
 import React from "react";
 
 const Header = () => {
@@ -7,7 +8,7 @@ const Header = () => {
 
       <div
         style={{
-          backgroundImage: `url("/bg-dasj.jpg")`,
+          backgroundImage: `url("/portfolioImg.jpg")`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           backgroundPosition: "center",
@@ -16,32 +17,19 @@ const Header = () => {
         }}
         className=" bg-[#D8FCFF] rounded-lg  gap-10"
       >
-        <div className="flex flex-col gap-4 md:gap-0 md:flex-row justify-between  bg-opacity-60 p-20 items-center rounded-lg bg-[#D8FCFF] w-full h-full">
-          <div className="flex flex-col items-center">
-            <h1 className="text-[#1E1E1E] text-xl  md:text-3xl  font-medium">
-              $20,000,000
-            </h1>
-            <p className="text-muted-foreground text-xs md:text-sm">
-              Total Amount Raised
-            </p>
+        <div className="flex flex-col gap-4  items-center  bg-opacity-60 p-20 items-center rounded-lg bg-[#D8FCFF] w-full h-full">
+          <div className="flex flex-col gap-4 items-center ">
+            <span className="flex items-center gap-4 text-muted-foreground">
+              <h1 className="text-sm">Total Balance</h1>
+              <Eye />
+            </span>
+
+            <h1 className="text-6xl text-[#32393A] ">$4000.00</h1>
           </div>
 
-          <div className="flex flex-col items-center">
-            <h1 className="text-[#1E1E1E] text-xl md:text-3xl  font-medium">
-              $500,000
-            </h1>
-            <p className="text-muted-foreground text-xs md:text-sm">
-              Total Dividend Payed Out
-            </p>
-          </div>
-
-          <div className="flex flex-col items-center">
-            <h1 className="text-[#1E1E1E] text-xl md:text-3xl  font-medium">
-              450
-            </h1>
-            <p className="text-muted-foreground text-xs md:text-sm">
-              Total Deals
-            </p>
+          <div className="flex items-center gap-2">
+            <h1 className="text-[#0E8938]">+$403.40</h1>
+            <h1 className="p-1 rounded-full bg-[#0E8938] text-white">10.59%</h1>
           </div>
         </div>
       </div>
