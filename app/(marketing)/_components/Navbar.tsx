@@ -66,7 +66,7 @@ const Navbar = () => {
               ))}
             </ul>
 
-            <Link href="/pools">
+            <Link href="/portfolio">
               <Button className="bg-[#007A86] rounded-full px-4" size="lg">
                 Launch App
               </Button>

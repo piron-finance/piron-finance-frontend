@@ -6,6 +6,7 @@ import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import Footer from "../../_components/Footer";
+import Navbar from "../../_components/Navbar";
 
 const getBgColorClass = (poolStatus: string) => {
   switch (poolStatus) {
@@ -32,6 +33,7 @@ const getTextColorClass = (poolStatus: string) => {
 const page = () => {
   return (
     <div className="flex flex-col h-full">
+      <Navbar page="deals" />
       <Header />
 
       <div>

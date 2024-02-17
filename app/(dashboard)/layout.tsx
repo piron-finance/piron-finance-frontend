@@ -28,7 +28,6 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
           isMobile && !isCollapsed ? "opacity-0" : ""
         )}
       >
-        <Navbar />
         {children}
       </main>
     </div>
