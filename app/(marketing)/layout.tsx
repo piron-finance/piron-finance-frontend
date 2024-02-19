@@ -1,6 +1,5 @@
 import React from "react";
 import Navbar from "./_components/Navbar";
-import Footer from "./_components/Footer";
 
 const MarketingLayout = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -9,8 +8,9 @@ const MarketingLayout = ({ children }: { children: React.ReactNode }) => {
       suppressHydrationWarning
     >
       <Navbar />
-      <main className=" ">{children}</main>
-      <Footer />
+      <main className="flex flex-col w-full   h-screen overflow-y-scroll ">
+        {children}
+      </main>
     </div>
   );
 };

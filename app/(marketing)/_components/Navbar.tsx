@@ -40,7 +40,7 @@ const Navbar = () => {
   return (
     <>
       {!isMobile ? (
-        <div className="flex items-center justify-between mx-8 mt-4">
+        <div className="flex items-center justify-between mx-8 my-4">
           <div>
             <Image
               className="w-full"
@@ -54,9 +54,8 @@ const Navbar = () => {
           <div className="flex items-center gap-6">
             <ul className="flex gap-5">
               {NavItems.map((item, index) => (
-                <Link href={item.path}>
+                <Link key={index} href={item.path}>
                   <li
-                    key={index}
                     className={cn(
                       "text-md text-[#546162] hover:cursor-pointer hover:text-[#007A86]",
                       font.className

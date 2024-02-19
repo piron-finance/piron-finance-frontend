@@ -1,12 +1,13 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import React from "react";
+import Footer from "../../_components/Footer";
 
 const DealPage = () => {
   return (
-    <div className="flex flex-col h-screen mx-4">
+    <div className="flex flex-col h-screen ">
       {/* header */}
-      <div className="flex items-center justify-between mx-6 mt-16 ">
+      <div className="flex items-center justify-between mx-12 mt-16 ">
         <div className="flex flex-col gap-8">
           <div className="flex flex-col gap-5 items-start max-w-lg">
             <h1 className="text-5xl font-semibold text-gray-700">
@@ -32,6 +33,25 @@ const DealPage = () => {
         </div>
       </div>
       {/* header end */}
+
+      <div className="flex flex-col items-center gap-8  bg-[#00434A]">
+        <div className="flex flex-col items-center gap-8 my-12">
+          <h1 className="p-3 rounded-full text-xs uppercase bg-[#003338]  text-[#8AC2C7]">
+            Diversity is the spice of finance
+          </h1>
+          <h1 className="text-3xl text-center max-w-xl font-medium text-white">
+            Get into the wide array of assets kept hidden by TradFi Gatekeepers
+            through Piron Deals
+          </h1>
+        </div>
+
+        <div className="my-4">
+          <Image src="testr.svg" width={647} height={366} alt="header" />
+        </div>
+      </div>
+      {/* end */}
+
+      <Footer />
     </div>
   );
 };
