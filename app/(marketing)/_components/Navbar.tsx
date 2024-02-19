@@ -16,12 +16,12 @@ import Link from "next/link";
 
 const NavItems = [
   {
-    name: "Features",
-    path: "/",
+    name: "Deals",
+    path: "/deals",
   },
   {
-    name: "For Businesses",
-    path: "/",
+    name: "Clubs",
+    path: "/club",
   },
   {
     name: "Blog",
@@ -54,15 +54,17 @@ const Navbar = () => {
           <div className="flex items-center gap-6">
             <ul className="flex gap-5">
               {NavItems.map((item, index) => (
-                <li
-                  key={index}
-                  className={cn(
-                    "text-md text-[#546162] hover:cursor-pointer hover:text-[#007A86]",
-                    font.className
-                  )}
-                >
-                  {item.name}
-                </li>
+                <Link href={item.path}>
+                  <li
+                    key={index}
+                    className={cn(
+                      "text-md text-[#546162] hover:cursor-pointer hover:text-[#007A86]",
+                      font.className
+                    )}
+                  >
+                    {item.name}
+                  </li>
+                </Link>
               ))}
             </ul>
 
