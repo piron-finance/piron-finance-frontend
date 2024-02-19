@@ -16,12 +16,12 @@ import Link from "next/link";
 
 const NavItems = [
   {
-    name: "Features",
-    path: "/",
+    name: "Deals",
+    path: "/deals",
   },
   {
-    name: "For Businesses",
-    path: "/",
+    name: "Clubs",
+    path: "/club",
   },
   {
     name: "Blog",
@@ -40,7 +40,7 @@ const Navbar = () => {
   return (
     <>
       {!isMobile ? (
-        <div className="flex items-center justify-between mx-8 mt-4">
+        <div className="flex items-center justify-between mx-8 my-4">
           <div>
             <Image
               className="w-full"
@@ -54,15 +54,16 @@ const Navbar = () => {
           <div className="flex items-center gap-6">
             <ul className="flex gap-5">
               {NavItems.map((item, index) => (
-                <li
-                  key={index}
-                  className={cn(
-                    "text-md text-[#546162] hover:cursor-pointer hover:text-[#007A86]",
-                    font.className
-                  )}
-                >
-                  {item.name}
-                </li>
+                <Link key={index} href={item.path}>
+                  <li
+                    className={cn(
+                      "text-md text-[#546162] hover:cursor-pointer hover:text-[#007A86]",
+                      font.className
+                    )}
+                  >
+                    {item.name}
+                  </li>
+                </Link>
               ))}
             </ul>
 

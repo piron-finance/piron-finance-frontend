@@ -9,6 +9,7 @@ import { ArrowUpRight } from "lucide-react";
 import { BsDiscord, BsX } from "react-icons/bs";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { Input } from "@/components/ui/input";
+import Footer from "./_components/Footer";
 
 const font = DM_Sans({ subsets: ["latin"] });
 const font2 = EB_Garamond({ weight: "500", subsets: ["latin"] });
@@ -168,6 +169,7 @@ const MarketingPage = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
