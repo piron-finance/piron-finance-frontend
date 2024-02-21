@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import React from "react";
 import Footer from "../../_components/Footer";
+import { dealFlow } from "./_components/dummy";
 
 const DealPage = () => {
   return (
@@ -34,7 +35,7 @@ const DealPage = () => {
       </div>
       {/* header end */}
 
-      <div className="flex flex-col items-center gap-8  bg-[#00434A]">
+      <div className="flex flex-col items-center gap-2  bg-[#00434A]">
         <div className="flex flex-col items-center gap-8 my-12">
           <h1 className="p-3 rounded-full text-xs uppercase bg-[#003338]  text-[#8AC2C7]">
             Diversity is the spice of finance
@@ -45,10 +46,51 @@ const DealPage = () => {
           </h1>
         </div>
 
-        <div className="my-4">
-          <Image src="testr.svg" width={647} height={366} alt="header" />
+        <div className="py-6">
+          <Image
+            src="testr.svg"
+            className="w-full h-full"
+            width={750}
+            height={366}
+            alt="header"
+          />
         </div>
       </div>
+      {/* end */}
+
+      {/* how it works */}
+
+      <div className="flex flex-col items-center gap-8 my-12">
+        <div className="flex flex-col items-center">
+          <h1 className="text-sm text-[#007A86] font-medium">How it works</h1>
+          <h1 className="text-4xl font-semibold text-gray-600 max-w-xs text-center">
+            Taking Advantage of Piron Deals
+          </h1>
+        </div>
+
+        <div className="grid grid-cols-2 items-center gap-16">
+          {dealFlow.map((item, index) => (
+            <div key={index} className="flex flex-col items-center max-w-lg">
+              <h1 className="text-4xl text-muted-foreground my-4">
+                {item.num}
+              </h1>
+              <Image src={item.image} width={114} height={110} alt="icon" />
+              <div className="my-3 flex flex-col items-center">
+                <h1 className="text-2xl font-medium text-gray-600 my-1 ">
+                  {item.title}
+                </h1>
+                <h2 className="text-xs text-[#54A6AE] font-medium">
+                  {item.subTitle}
+                </h2>
+              </div>
+              <p className="text-sm text-center text-[#546162] max-w-xs">
+                {item.desc}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+
       {/* end */}
 
       <Footer />
