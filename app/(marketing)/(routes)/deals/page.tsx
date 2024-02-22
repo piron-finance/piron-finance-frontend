@@ -8,7 +8,7 @@ const DealPage = () => {
   return (
     <div className="flex flex-col h-screen ">
       {/* header */}
-      <div className="flex items-center justify-between mx-12 mt-16 ">
+      <div className="flex items-center justify-between mx-12 my-16 ">
         <div className="flex flex-col gap-8">
           <div className="flex flex-col gap-5 items-start max-w-lg">
             <h1 className="text-5xl font-semibold text-gray-700">
@@ -30,7 +30,7 @@ const DealPage = () => {
           </div>
         </div>
         <div>
-          <Image src="dealsHeader.svg" width={400} height={400} alt="header" />
+          <Image src="dealsHeader.svg" width={500} height={500} alt="header" />
         </div>
       </div>
       {/* header end */}
