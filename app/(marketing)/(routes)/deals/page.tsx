@@ -3,12 +3,14 @@ import Image from "next/image";
 import React from "react";
 import Footer from "../../_components/Footer";
 import { dealFlow } from "./_components/dummy";
+import { cn } from "@/lib/utils";
+import { ArrowRight } from "lucide-react";
 
 const DealPage = () => {
   return (
     <div className="flex flex-col h-screen ">
       {/* header */}
-      <div className="flex items-center justify-between mx-12 mt-16 ">
+      <div className="flex items-center justify-between mx-12 my-16 ">
         <div className="flex flex-col gap-8">
           <div className="flex flex-col gap-5 items-start max-w-lg">
             <h1 className="text-5xl font-semibold text-gray-700">
@@ -30,7 +32,7 @@ const DealPage = () => {
           </div>
         </div>
         <div>
-          <Image src="dealsHeader.svg" width={400} height={400} alt="header" />
+          <Image src="dealsHeader.svg" width={500} height={500} alt="header" />
         </div>
       </div>
       {/* header end */}
@@ -48,7 +50,7 @@ const DealPage = () => {
 
         <div className="py-6">
           <Image
-            src="testr.svg"
+            src="diversityimg.svg"
             className="w-full h-full"
             width={750}
             height={366}
@@ -68,30 +70,59 @@ const DealPage = () => {
           </h1>
         </div>
 
-        <div className="grid grid-cols-2 items-center gap-16">
+        <div className="grid grid-cols-2 items-center gap-28">
           {dealFlow.map((item, index) => (
-            <div key={index} className="flex flex-col items-center max-w-lg">
-              <h1 className="text-4xl text-muted-foreground my-4">
+            <div key={index} className="flex flex-col items-start ">
+              <h1 className="text-6xl font-semibold text-muted-foreground my-4">
                 {item.num}
               </h1>
-              <Image src={item.image} width={114} height={110} alt="icon" />
-              <div className="my-3 flex flex-col items-center">
-                <h1 className="text-2xl font-medium text-gray-600 my-1 ">
+              <Image
+                className={cn("h-3/5", index == 1 && "w-full")}
+                src={item.image}
+                width={343}
+                height={331}
+                alt="icon"
+              />
+              <div className="my-3 flex flex-col items-start">
+                <h1 className="text-4xl font-semibold text-gray-700 my-1  ">
                   {item.title}
                 </h1>
-                <h2 className="text-xs text-[#54A6AE] font-medium">
-                  {item.subTitle}
-                </h2>
+                <h2 className="text-2xl text-[#003338] ">{item.subTitle}</h2>
               </div>
-              <p className="text-sm text-center text-[#546162] max-w-xs">
-                {item.desc}
-              </p>
+              <p className="   text-[#546162] max-w-sm">{item.desc}</p>
             </div>
           ))}
         </div>
       </div>
 
       {/* end */}
+      <div className=" flex flex-col items-center my-20 ">
+        <div
+          style={{
+            backgroundImage: `url("/backdrop.png")`,
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            width: "80%",
+            height: "300px",
+          }}
+          className=" flex justify-center bg-[#D8FCFF] rounded-lg mx-12 gap-10"
+        >
+          <div>
+            <Image src="bgDrop2.svg" width={470} height={370} alt="header" />
+          </div>
+          <div className="flex flex-col gap-20 my-12">
+            <h1 className="text-3xl text-muted-foreground font-semibold max-w-sm">
+              Piron is used by people like yourself.
+            </h1>
+            <div>
+              <Button className="bg-[#007A86] inline-flex gap-2 rounded-full">
+                Start Now <ArrowRight size={20} />
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <Footer />
     </div>
