@@ -10,22 +10,28 @@ import { BsDiscord, BsX } from "react-icons/bs";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { Input } from "@/components/ui/input";
 import Footer from "./_components/Footer";
+import { Separator } from "@/components/ui/separator";
 
 const font = DM_Sans({ subsets: ["latin"] });
 const font2 = EB_Garamond({ weight: "500", subsets: ["latin"] });
 
 const MarketingPage = () => {
   return (
-    <div className="min-h-full flex flex-col items-center">
+    <div className=" flex flex-col h-screen ">
       {/* Hero */}
       <Heading />
+      <Separator />
 
       {/* why piron */}
-      <div className="flex flex-col lg:flex-row items-center gap-10 xl:gap-20 my-16 mx-8 ">
-        <h1 className={cn("text-4xl font-bold text-[#546162]", font.className)}>
-          Why Piron?
-        </h1>
-        <Image src="/why6.svg" alt="why" width={834} height={91} />
+      <div className="flex flex-col items-center">
+        <div className="flex flex-col  lg:flex-row items-center gap-10 xl:gap-20 my-16 mx-8 ">
+          <h1
+            className={cn("text-4xl font-bold text-[#546162]", font.className)}
+          >
+            Why Piron?
+          </h1>
+          <Image src="/why6.svg" alt="why" width={834} height={91} />
+        </div>
       </div>
 
       {/* user class */}
@@ -64,7 +70,7 @@ const MarketingPage = () => {
               <Button
                 className={cn(
                   "px-5 rounded-full bg-[#007A86]",
-                  index == 1 && "text-[#007A86] bg-white"
+                  index == 1 && "text-[#007A86] bg-white hover:text-white"
                 )}
               >
                 {item.buttonText}
@@ -82,12 +88,12 @@ const MarketingPage = () => {
           </h1>
         </div>
 
-        <div className="flex flex-col items-center gap-28">
+        <div className="flex flex-col items-center gap-28 mb-12">
           {features.map((item, index) => (
             <div
               key={index}
               className={cn(
-                "flex items-center gap-20",
+                "flex items-center gap-28",
                 index % 2 == 0 ? "flex-row" : "flex-row-reverse"
               )}
             >
@@ -136,9 +142,9 @@ const MarketingPage = () => {
 
       {/* newsletter */}
 
-      <div className="flex flex-col items-center gap-8 my-16 mx-6 lg:my-28">
+      <div className="flex flex-col items-center gap-8 my-16 mx-6 lg:my-20">
         <div className="flex  items-center gap-2 lg:gap-10">
-          <h1 className="text-2xl text-[#32393A] font-semibold">
+          <h1 className="text-xl text-[#32393A] font-semibold">
             Say GM, we&apos;re listening
           </h1>
           <span className="flex items-center gap-5">
