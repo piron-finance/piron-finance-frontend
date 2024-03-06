@@ -137,18 +137,25 @@ const Navbar = () => {
 
           <div className="flex flex-col ">
           <ul className="flex flex-col gap-5">
+          <Link href="/" >
             <li onClick={toggle}>
-              <Link href="/" ><p>Investors</p></Link>
+            Investors
             </li>
+            </Link>
+
+            <Link href="/" >
             <li onClick={toggle}>
-              <Link href="/" ><p>Asset Originators</p></Link>
+             Asset Originators
             </li>
+            </Link>
             <Separator />
 
             {NavItems.map((item, index) => (
-            <li onClick={toggle} key={index}>
-              <Link href={item.path} ><p>{item.name}</p></Link>
+               <Link href={item.path} key={index} >
+            <li onClick={toggle} >
+             {item.name}
             </li>
+            </Link>
 
             ))}
           </ul>

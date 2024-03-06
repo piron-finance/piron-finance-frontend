@@ -1,4 +1,4 @@
-import React from "react";
+"use client"
 import Heading from "./_components/Heading";
 import Image from "next/image";
 import { DM_Sans, EB_Garamond } from "next/font/google";
@@ -11,26 +11,27 @@ import { FaSquareXTwitter } from "react-icons/fa6";
 import { Input } from "@/components/ui/input";
 import Footer from "./_components/Footer";
 import { Separator } from "@/components/ui/separator";
+import {isMobile} from 'react-device-detect';
 
 const font = DM_Sans({ subsets: ["latin"] });
-const font2 = EB_Garamond({ weight: "500", subsets: ["latin"] });
 
 const MarketingPage = () => {
+  
   return (
-    <div className=" flex flex-col h-screen ">
+    <div className=" flex flex-col h-screen " suppressHydrationWarning>
       {/* Hero */}
       <Heading />
       <Separator />
 
       {/* why piron */}
       <div className="flex flex-col items-center">
-        <div className="flex flex-col  lg:flex-row items-center gap-10 xl:gap-20 my-16 mx-8 ">
+        <div className="flex flex-col  lg:flex-row items-center gap-10 xl:gap-20 my-8 md:my-16 mx-8 ">
           <h1
             className={cn("text-4xl font-bold text-[#546162]", font.className)}
           >
             Why Piron?
           </h1>
-          <Image src="/why6.svg" alt="why" width={834} height={91} />
+          <Image src={ isMobile ?  "/why6.svg" : "/MobileWhy.svg"} alt="why" width={834} height={91} />
         </div>
       </div>
 
@@ -93,12 +94,14 @@ const MarketingPage = () => {
             <div
               key={index}
               className={cn(
-                "flex items-center gap-28",
-                index % 2 == 0 ? "flex-row" : "flex-row-reverse"
+                "flex flex-col md:flex-row items-center gap-28",
+               
+                isMobile ? 'flex-col' : index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
+
               )}
             >
               <div>
-                <Image src={item.icon} alt="icon" width={294} height={100} />
+                <Image src={item.icon} alt="icon" width={294} height={100} /> 
               </div>
 
               <div className="flex flex-col items-start gap-6">
@@ -154,11 +157,11 @@ const MarketingPage = () => {
         </div>
 
         <div className="flex flex-col lg:flex-row items-center gap-12 bg-[#E6F2F3] rounded-xl p-8">
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col md:items-center gap-3">
             <h2 className="text-lg font-medium text-[#32393A]">
               Suscribe to our newsletter
             </h2>
-            <p className=" text-center lg:text-start lg:max-w-sm text-muted-foreground">
+            <p className=" md:text-center lg:text-start lg:max-w-sm text-muted-foreground">
               Get insights, updates, and community highlights delivered straight
               to your inbox.
             </p>
