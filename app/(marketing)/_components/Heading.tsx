@@ -19,33 +19,33 @@ const Heading = () => {
       }}
       className="flex flex-col items-center "
     >
-      <div className="flex flex-col justify-center items-center gap-4  px-8 lg:px-32 py-20 text-[#323536]">
-        <div className="flex flex-col items-center gap-8 justify-center max-w-5xl ">
-          <div className="flex flex-col items-center gap-4 max-w-4xl">
+      <div className="flex flex-col justify-center items-center   px-8 lg:px-32 py-10 text-[#323536]">
+        <div className="flex flex-col items-center gap-16 justify-center  ">
+          <div className="flex flex-col items-center gap-5 max-w-5xl">
             <h1
               className={cn(
-                "text-center text-3xl md:text-4xl lg:text-5xl   ",
+                "text-center text-3xl md:text-4xl lg:text-6xl  leading-loose ",
                 font.className
               )}
             >
               Decentralized Asset Management for the{" "}
               <span className="text-[#007A86]"> Next-gen Investor. </span>
             </h1>
-            <p className="text-center text-sm md:text-base  text-muted-foreground ">
+            <p className="text-center text-sm md:text-base max-w-4xl  text-muted-foreground ">
               Piron brings asset originators and investors together, while
               ensuring a transparent, secured, and enhanced liquidity for
               financial and real-world assets.
             </p>
 
             <div>
-              <Button size="lg" className="bg-[#007A86] rounded-full ">
+              <Button size="lg" className="bg-[#007A86] rounded-full py-2">
                 Get Started
               </Button>
             </div>
           </div>
 
           <div>
-            <Image src="/newHero.svg" alt="hero" width={724} height={100} />
+            <Image src="/newHero.svg" alt="hero" width={796} height={334} />
           </div>
         </div>
       </div>

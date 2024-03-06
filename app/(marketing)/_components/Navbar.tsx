@@ -24,16 +24,16 @@ const NavItems = [
     name: "Investment Clubs",
     path: "/club",
   },
-  {
-    name: "For Asset Originators",
-    path: "/",
-  },
+  // {
+  //   name: "For Asset Originators",
+  //   path: "/",
+  // },
   {
     name: "Blog",
-    path: "/",
+    path: "https://mirror.xyz/0x6fE7fBbD0Bbb6f51A02613F4e00895511FA26457",
   },
   {
-    name: "FAQs",
+    name: "Docs",
     path: "/",
   },
 ];
@@ -47,15 +47,15 @@ const Navbar = () => {
       {!isMobile ? (
         <>
           <div className="flex items-center justify-between mx-8 my-4 ">
-            <div>
+            <Link href="/">
               <Image
-                className="w-full"
+                className="w-full hover:cursor-pointer"
                 src="/logo66.svg"
                 alt="logo"
                 width={100}
                 height={100}
               />
-            </div>
+            </Link>
 
             <div className="flex items-center gap-x-6">
               <ul className="flex gap-5">
