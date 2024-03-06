@@ -6,7 +6,7 @@ import { BsDiscord, BsGithub } from "react-icons/bs";
 
 const Footer = () => {
   return (
-    <div className="flex flex-col bg-[#007A86] p-4">
+    <div className="flex flex-col bg-[#007A86] p-4 bottom-0 mt-auto">
       <div className="flex items-center justify-around my-4 lg:my-12 mx-6">
         <div className="hidden md:block">
           <Image
