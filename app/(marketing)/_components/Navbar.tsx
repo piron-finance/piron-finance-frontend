@@ -11,7 +11,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-import { Menu } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { Separator } from "@/components/ui/separator";
 
@@ -36,12 +36,18 @@ const NavItems = [
     name: "Docs",
     path: "/",
   },
-];
+]
 
 const font = DM_Sans({ weight: "500", subsets: ["latin"] });
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = React.useState(false);
   const isMobile = useMediaQuery("(max-width: 1024px)");
+
+  const toggle = () => {
+    setIsOpen(!isOpen);
+  }
+
   return (
     <>
       {!isMobile ? (
@@ -85,38 +91,72 @@ const Navbar = () => {
       ) : (
         /// fix nav content for mobile view. fix also: suspending laoding the page till usemedia hook is done. ie, until ismobile is valid, page stays loading
         // feat: implement lazy loading and newsletter. fix footer hover color
-        <div className="flex items-center justify-between mx-8 mt-6">
+        <>
+        <div className="flex items-center justify-between mx-8 py-4">
+        <Link href="/">
+            <Image
+              className=""
+              src="/logo66.svg"
+              alt="logo"
+              width={100}
+              height={100}
+            />
+          </Link>
+          <div>
+            
+                <Menu className="hover:cursor-pointer" onClick={toggle} />
+            
+          </div>
+        </div>
+        <Separator />
+        </>
+      )}
+
+      {isOpen && (
+        <div
+          className="flex flex-col gap-12 fixed w-full h-full pt-8 px-8 bg-white z-10"
+          style={{
+            opacity: "1",
+            transition: "all 0.5s",
+          }}
+        >
+          <div className="flex items-center justify-between">
           <div>
             <Image
-              className="w-full"
+              className=""
               src="/logo66.svg"
               alt="logo"
               width={100}
               height={100}
             />
           </div>
-          <div>
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Menu />
-              </DropdownMenuTrigger>
+          
+          <X  size={28} className="hover:cursor-pointer" onClick={toggle} />
 
-              <DropdownMenuContent
-                className="w-120 m-4"
-                align="start"
-                alignOffset={16}
-                forceMount
-              >
-                <div>
-                  <div className="flex items-center justify-between">
-                    <h1 className="font-bold text-gray-600 dark:text-gray-200 text-xl p-4 ">
-                      Features
-                    </h1>
-                  </div>
-                </div>
-              </DropdownMenuContent>
-            </DropdownMenu>
           </div>
+
+          <div className="flex flex-col ">
+          <ul className="flex flex-col gap-5">
+            <li onClick={toggle}>
+              <Link href="/" ><p>Investors</p></Link>
+            </li>
+            <li onClick={toggle}>
+              <Link href="/" ><p>Asset Originators</p></Link>
+            </li>
+            <Separator />
+
+            {NavItems.map((item, index) => (
+            <li onClick={toggle} key={index}>
+              <Link href={item.path} ><p>{item.name}</p></Link>
+            </li>
+
+            ))}
+          </ul>
+          <Button className="bg-[#007A86] rounded-lg  mt-8 px-6" size="lg">
+            Launch App
+          </Button>
+          </div>
+          
         </div>
       )}
     </>

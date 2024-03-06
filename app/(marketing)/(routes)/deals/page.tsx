@@ -84,10 +84,10 @@ const DealPage = () => {
                 alt="icon"
               />
               <div className="my-3 flex flex-col items-start">
-                <h1 className="text-4xl font-semibold text-gray-700 my-1  ">
+                <h1 className="text-4xl font-semibold text-gray-700 my-1  max-w-sm ">
                   {item.title}
                 </h1>
-                <h2 className="text-2xl text-[#003338] ">{item.subTitle}</h2>
+                <h2 className="text-2xl text-[#54A6AE] max-w-md">{item.subTitle}</h2>
               </div>
               <p className="   text-[#546162] max-w-sm">{item.desc}</p>
             </div>
