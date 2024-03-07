@@ -69,7 +69,7 @@ const DealPage = () => {
           </h1>
         </div>
 
-        <div className={cn(" flex flex-col  md:grid md:grid-cols-2 items-center gap-28 mx-4 md:mx-0", )}>
+        <div className={cn(" flex flex-col  md:grid md:grid-cols-2 items-center gap-28 mx-4 lg:mx-0", )}>
           {dealFlow.map((item, index) => (
             <div key={index} className="flex flex-col items-start ">
               <h1 className=" text-4xl md:text-6xl font-semibold text-gray-400 my-4">
@@ -108,7 +108,7 @@ const DealPage = () => {
           className=" flex flex-col-reverse md:flex-row justify-center bg-[#D8FCFF] rounded-lg mx-12 md:gap-10"
         >
           <div>
-            <Image className="w-[235px] md:w-full" src="bgDrop2.svg" width={470} height={370} alt="header" />
+            <Image className="w-[235px] lg:w-[470px]" src="bgDrop2.svg" width={470} height={370} alt="header" />
           </div>
           <div className="flex flex-col mx-4 gap-6 md:gap-20 md:my-12">
             <h1 className="text-2xl md:text-3xl text-muted-foreground font-medium md:font-semibold max-w-sm">
