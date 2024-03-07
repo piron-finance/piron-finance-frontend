@@ -3,7 +3,6 @@ import Image from "next/image";
 import React from "react";
 import { clubFeatures, clubFeatures2 } from "./_components/dummy";
 import { cn } from "@/lib/utils";
-import { Arrow } from "@radix-ui/react-dropdown-menu";
 import { ArrowRight } from "lucide-react";
 import Footer from "../../_components/Footer";
 
@@ -38,17 +37,17 @@ const ClubPage = () => {
       </div>
       
 
-      <div className="flex flex-col md:flex-row mx-8 md:my-20">
-        <div className="w-full  md:w-1/3">
+      <div className="flex flex-col lg:flex-row mx-8 md:my-20">
+        <div className="w-full  lg:w-1/3">
           <h1 className=" text-2xl md:text-5xl font-semibold md:max-w-md text-gray-600">
             Powerful investing tools, right out of the box
           </h1>
         </div>
-        <div className="flex flex-col md:grid md:grid-cols-2 gap-8 py-8 md:py-0 items-start md:w-2/3">
+        <div className="flex flex-col md:grid md:grid-cols-2 gap-8 py-8 lg:py-0 items-start lg:w-2/3">
           {clubFeatures.map((item, index) => (
             <div
               key={index}
-              className="flex flex-col gap-3 md:w-[300px]  border border-[#B0D6D9] p-3 rounded-xl"
+              className="flex flex-col gap-3 lg:w-[300px]  border border-[#B0D6D9] p-3 rounded-xl"
             >
               <Image src={item.image} alt="icon" width={40} height={40} />
               <h1 className="text-xl md:text-2xl text-gray-800 max-w-sm">{item.title}</h1>
@@ -68,7 +67,7 @@ const ClubPage = () => {
             <div
               key={index}
               className={cn(
-                "flex md:items-center justify-between py-6 px-6 md:px-28",
+                "flex md:items-center justify-between gap-6 py-6 px-6  lg:px-28",
                 index % 2 == 0 ? " flex-col-reverse md:flex-row" : "flex-col-reverse md:flex-row-reverse",
                 index == 0
                   ? "bg-[#E7F5EC]"
@@ -106,7 +105,7 @@ const ClubPage = () => {
                 </div>
                 <h1
                   className={cn(
-                    "text-xl md:text-2xl font-medium text-[#003338]",
+                    "text-xl lg:text-2xl font-medium text-[#003338]",
                     index == 0
                       ? "text-[#003338]"
                       : index == 1
@@ -116,7 +115,7 @@ const ClubPage = () => {
                 >
                   {item.title}
                 </h1>
-                <p className="md:text-lg text-muted-foreground md:max-w-lg">
+                <p className="lg:text-lg text-muted-foreground md:max-w-lg">
                   {item.desc}
                 </p>
               </div>
@@ -131,7 +130,7 @@ const ClubPage = () => {
     
 
       <div className="flex flex-col items-center">
-        <div className="flex flex-col md:flex-row items-end gap-16 my-12 px-3 md:px-0">
+        <div className="flex flex-col lg:flex-row items-end gap-16 my-12 px-3 md:px-0">
           <div>
             <Image
               src="/clubIcons/clubMar4.svg"
@@ -140,8 +139,8 @@ const ClubPage = () => {
               alt="header"
             />
           </div>
-          <div className="flex flex-col items-center md:items-start gap-4">
-            <h1 className="text-3xl text-center md:text-start text-muted-foreground font-medium md:max-w-sm">
+          <div className="flex flex-col items-center lg:items-start gap-4">
+            <h1 className="text-3xl text-center lg:text-start text-muted-foreground font-medium lg:max-w-sm">
               Friends who invest together, stay together
             </h1>
             <div>

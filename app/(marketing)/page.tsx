@@ -1,4 +1,3 @@
-"use client"
 import Heading from "./_components/Heading";
 import Image from "next/image";
 import { DM_Sans, EB_Garamond } from "next/font/google";
@@ -11,7 +10,7 @@ import { FaSquareXTwitter } from "react-icons/fa6";
 import { Input } from "@/components/ui/input";
 import Footer from "./_components/Footer";
 import { Separator } from "@/components/ui/separator";
-import {isMobile} from 'react-device-detect';
+
 
 const font = DM_Sans({ subsets: ["latin"] });
 
@@ -31,7 +30,7 @@ const MarketingPage = () => {
           >
             Why Piron?
           </h1>
-          <Image src={ isMobile ?  "/why6.svg" : "/MobileWhy.svg"} alt="why" width={834} height={91} />
+          <Image src=  "/why6.svg" alt="why" width={834} height={91} />
         </div>
       </div>
 
@@ -47,7 +46,7 @@ const MarketingPage = () => {
           Piron for those who are shaping the future
         </h1>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 py-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-10">
           {userClass.map((item, index) => (
             <div
               key={index}
@@ -94,9 +93,9 @@ const MarketingPage = () => {
             <div
               key={index}
               className={cn(
-                "flex flex-col md:flex-row items-center gap-28",
+                "flex flex-col  items-center gap-12 md:gap-28",
                
-                isMobile ? 'flex-col' : index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
+               index % 2 === 0 ? ' flex-col md:flex-row' : 'flex-col md:flex-row-reverse'
 
               )}
             >
@@ -156,12 +155,22 @@ const MarketingPage = () => {
           </span>
         </div>
 
-        <div className="flex flex-col lg:flex-row items-center gap-12 bg-[#E6F2F3] rounded-xl p-8">
+        <div
+      style={{
+        backgroundImage: `url("/HomeCardBg.svg")`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        width: "100%",
+        height: "100%",
+      }}
+      className="flex flex-col items-center gap-12 bg-[#E6F2F3] rounded-xl p-8 "
+    >
           <div className="flex flex-col md:items-center gap-3">
-            <h2 className="text-lg font-medium text-[#32393A]">
+            <h2 className="text-lg md:text-4xl font-medium text-[#546162]">
               Suscribe to our newsletter
             </h2>
-            <p className=" md:text-center lg:text-start lg:max-w-sm text-muted-foreground">
+            <p className="text-center text-light lg:max-w-sm text-muted-foreground">
               Get insights, updates, and community highlights delivered straight
               to your inbox.
             </p>
@@ -169,10 +178,10 @@ const MarketingPage = () => {
 
           <div className="flex items-center">
             <Input
-              className="flex-1 px-4  lg:px-12 py-5 md:py-7 rounded-full  focus-visible:border-0 focus-visible:ring-0"
+              className="flex-1 px-4  lg:px-8 py-5 md:py-6 rounded-full  focus-visible:border-0 focus-visible:ring-0"
               placeholder="me@example.com"
             />
-            <Button className="rounded-full bg-[#007A86] py-5 md:py-7 -ml-12">
+            <Button className="rounded-full bg-[#007A86] py-5 md:py-6 -ml-12">
               Subscribe
             </Button>
           </div>

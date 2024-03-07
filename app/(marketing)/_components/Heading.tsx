@@ -24,7 +24,7 @@ const Heading = () => {
           <div className="flex flex-col items-start md:items-center gap-5 max-w-5xl">
             <h1
               className={cn(
-                "md:text-center text-3xl md:text-4xl lg:text-6xl  md:leading-loose ",
+                "md:text-center text-3xl md:text-5xl lg:text-6xl   ",
                 font.className
               )}
             >
