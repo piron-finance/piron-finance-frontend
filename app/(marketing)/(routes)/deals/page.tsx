@@ -1,23 +1,23 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import React from "react";
 import Footer from "../../_components/Footer";
 import { dealFlow } from "./_components/dummy";
 import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
+import { isMobile } from "react-device-detect";
 
 const DealPage = () => {
   return (
     <div className="flex flex-col h-screen ">
       {/* header */}
-      <div className="flex items-center justify-between mx-12 my-16 ">
+      <div className="flex flex-col-reverse md:flex-row items-center justify-between mx-8 my-16 ">
         <div className="flex flex-col gap-8">
-          <div className="flex flex-col gap-5 items-start max-w-lg">
-            <h1 className="text-5xl font-semibold text-gray-700">
+          <div className="flex flex-col gap-5 items-start md:max-w-lg">
+            <h1 className=" text-3xl  md:text-5xl font-semibold text-gray-700">
               Achieve Your Financial Goals By Participating in
               <span className="text-[#007A86]"> Deals </span>
             </h1>
-            <h2 className="text-muted-foreground font-light text-lg">
+            <h2 className="text-muted-foreground font-light md:text-lg">
               Explore a new world of asset backed opportunities, seamlessly{" "}
               <span className="italic text-[#EF841F]"> powered by Piron.</span>
             </h2>
@@ -35,20 +35,20 @@ const DealPage = () => {
           <Image src="dealsHeader.svg" width={500} height={500} alt="header" />
         </div>
       </div>
-      {/* header end */}
+      
 
       <div className="flex flex-col items-center gap-2  bg-[#00434A]">
-        <div className="flex flex-col items-center gap-8 my-12">
-          <h1 className="p-3 rounded-full text-xs uppercase bg-[#003338]  text-[#8AC2C7]">
+        <div className="flex flex-col items-center gap-4 md:gap-8 my-12">
+          <h1 className=" p-2 md:p-3 rounded-full text-xs  bg-[#003338]  text-[#8AC2C7]">
             Diversity is the spice of finance
           </h1>
-          <h1 className="text-3xl text-center max-w-xl font-medium text-white">
+          <h1 className=" text-xl md:text-3xl text-center max-w-xl font-semibold md:font-medium text-white">
             Get into the wide array of assets kept hidden by TradFi Gatekeepers
             through Piron Deals
           </h1>
         </div>
 
-        <div className="py-6">
+        <div className="py-3 md:py-6 mx-3 md:mx-0">
           <Image
             src="diversityimg.svg"
             className="w-full h-full"
@@ -58,22 +58,21 @@ const DealPage = () => {
           />
         </div>
       </div>
-      {/* end */}
-
+      
       {/* how it works */}
 
       <div className="flex flex-col items-center gap-8 my-12">
         <div className="flex flex-col items-center">
-          <h1 className="text-sm text-[#007A86] font-medium">How it works</h1>
-          <h1 className="text-4xl font-semibold text-gray-600 max-w-xs text-center">
+          <h1 className="text-sm text-[#007A86] font-semibold md:font-medium py-2">How it works</h1>
+          <h1 className=" text-2xl md:text-4xl font-semibold text-gray-600 max-w-xs text-center">
             Taking Advantage of Piron Deals
           </h1>
         </div>
 
-        <div className="grid grid-cols-2 items-center gap-28">
+        <div className={cn(" flex flex-col  md:grid md:grid-cols-2 items-center gap-28 mx-4 md:mx-0", )}>
           {dealFlow.map((item, index) => (
             <div key={index} className="flex flex-col items-start ">
-              <h1 className="text-6xl font-semibold text-muted-foreground my-4">
+              <h1 className=" text-4xl md:text-6xl font-semibold text-gray-400 my-4">
                 {item.num}
               </h1>
               <Image
@@ -83,19 +82,19 @@ const DealPage = () => {
                 height={331}
                 alt="icon"
               />
-              <div className="my-3 flex flex-col items-start">
-                <h1 className="text-4xl font-semibold text-gray-700 my-1  max-w-sm ">
+              <div className="my-4 flex flex-col items-start">
+                <h1 className="text-2xl md:text-4xl font-semibold text-gray-700 my-1  max-w-sm ">
                   {item.title}
                 </h1>
-                <h2 className="text-2xl text-[#54A6AE] max-w-md">{item.subTitle}</h2>
+                <h2 className="text-xl md:text-2xl text-[#54A6AE] max-w-md">{item.subTitle}</h2>
               </div>
-              <p className="   text-[#546162] max-w-sm">{item.desc}</p>
+              <p className=" text-xs md:text-base   text-[#546162] md:max-w-sm">{item.desc}</p>
             </div>
           ))}
         </div>
       </div>
 
-      {/* end */}
+      
       <div className=" flex flex-col items-center my-20 ">
         <div
           style={{
@@ -103,16 +102,16 @@ const DealPage = () => {
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
             backgroundPosition: "center",
-            width: "80%",
+            width: "90%",
             height: "300px",
           }}
-          className=" flex justify-center bg-[#D8FCFF] rounded-lg mx-12 gap-10"
+          className=" flex flex-col-reverse md:flex-row justify-center bg-[#D8FCFF] rounded-lg mx-12 md:gap-10"
         >
           <div>
-            <Image src="bgDrop2.svg" width={470} height={370} alt="header" />
+            <Image className="w-[235px] md:w-full" src="bgDrop2.svg" width={470} height={370} alt="header" />
           </div>
-          <div className="flex flex-col gap-20 my-12">
-            <h1 className="text-3xl text-muted-foreground font-semibold max-w-sm">
+          <div className="flex flex-col mx-4 gap-6 md:gap-20 md:my-12">
+            <h1 className="text-2xl md:text-3xl text-muted-foreground font-medium md:font-semibold max-w-sm">
               Piron is used by people like yourself.
             </h1>
             <div>
