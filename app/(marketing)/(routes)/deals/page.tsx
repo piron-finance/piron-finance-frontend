@@ -50,7 +50,7 @@ const DealPage = () => {
 
         <div className="py-3 md:py-6 mx-3 md:mx-0">
           <Image
-            src="diversityimg.svg"
+            src="diversityImg.svg"
             className="w-full h-full"
             width={750}
             height={366}
