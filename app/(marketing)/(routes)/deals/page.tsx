@@ -5,6 +5,7 @@ import { dealFlow } from "./_components/dummy";
 import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
 import { isMobile } from "react-device-detect";
+import Waitlist from "../../_components/Waitlist";
 
 const DealPage = () => {
   return (
@@ -23,12 +24,17 @@ const DealPage = () => {
             </h2>
           </div>
           <div className="flex gap-4">
+            <Waitlist>
             <Button className="bg-[#007A86] rounded-full" color="">
               View Demo
             </Button>
+            </Waitlist>
+
+            <Waitlist>
             <Button variant="outline" className="rounded-full">
               Read Docs
             </Button>
+            </Waitlist>
           </div>
         </div>
         <div>
@@ -115,9 +121,11 @@ const DealPage = () => {
               Piron is used by people like yourself.
             </h1>
             <div>
+              <Waitlist>
               <Button className="bg-[#007A86] inline-flex gap-2 rounded-full">
                 Start Now <ArrowRight size={20} />
               </Button>
+              </Waitlist>
             </div>
           </div>
         </div>
