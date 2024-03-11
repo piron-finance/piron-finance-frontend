@@ -5,6 +5,7 @@ import { clubFeatures, clubFeatures2 } from "./_components/dummy";
 import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
 import Footer from "../../_components/Footer";
+import Waitlist from "../../_components/Waitlist";
 
 const ClubPage = () => {
   return (
@@ -21,7 +22,9 @@ const ClubPage = () => {
             share insights and amplify your investment portfolio.
           </p>
           <span>
+            <Waitlist>
             <Button className="bg-[#007A86] rounded-full">Explore Clubs</Button>
+            </Waitlist>
           </span>
         </div>
 
@@ -144,9 +147,11 @@ const ClubPage = () => {
               Friends who invest together, stay together
             </h1>
             <div>
+              <Waitlist>
               <Button className="bg-[#007A86] inline-flex gap-2 rounded-full">
                 Create a Club <ArrowRight size="20" />
               </Button>
+              </Waitlist>
             </div>
           </div>
         </div>

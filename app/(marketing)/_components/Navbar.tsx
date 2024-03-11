@@ -14,6 +14,7 @@ import {
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { Separator } from "@/components/ui/separator";
+import Waitlist from "./Waitlist";
 
 const NavItems = [
   {
@@ -79,11 +80,12 @@ const Navbar = () => {
                 ))}
               </ul>
 
-              <Link href="/portfolio">
+              <Waitlist>
                 <Button className="bg-[#007A86] rounded-full px-6" size="lg">
                   Launch App
                 </Button>
-              </Link>
+                </Waitlist>
+            
             </div>
           </div>
           <Separator />
@@ -159,9 +161,11 @@ const Navbar = () => {
 
             ))}
           </ul>
+          <Waitlist>
           <Button className="bg-[#007A86] rounded-lg  mt-8 px-6" size="lg">
             Launch App
           </Button>
+          </Waitlist>
           </div>
           
         </div>
