@@ -41,20 +41,20 @@ const ClubPage = () => {
       
 
       <div className="flex flex-col lg:flex-row mx-8 md:my-20">
-        <div className="w-full  lg:w-1/3">
+        <div className="w-full  lg:w-2/5">
           <h1 className=" text-2xl md:text-5xl font-semibold md:max-w-md text-gray-600">
             Powerful investing tools, right out of the box
           </h1>
         </div>
-        <div className="flex flex-col md:grid md:grid-cols-2 gap-8 py-8 lg:py-0 items-start lg:w-2/3">
+        <div className="flex flex-col md:grid md:grid-cols-2 gap-8 py-8 lg:py-0 items-end  lg:w-3/5">
           {clubFeatures.map((item, index) => (
             <div
               key={index}
-              className="flex flex-col gap-3 lg:w-[300px]  border border-[#B0D6D9] p-3 rounded-xl"
+              className="flex flex-col gap-3 lg:max-w-xl  border border-[#B0D6D9] p-3 rounded-xl"
             >
               <Image src={item.image} alt="icon" width={40} height={40} />
               <h1 className="text-xl md:text-2xl text-gray-800 max-w-sm">{item.title}</h1>
-              <p className="text-muted-foreground text-sm md:text-base max-w-xs font-light">
+              <p className="text-muted-foreground text-sm md:text-base max-w-sm font-light">
                 {item.desc}
               </p>
             </div>
