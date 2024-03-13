@@ -1,0 +1,4 @@
+{
+    "prettier.htmlWhitespaceSensitivity": "strict",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+}
