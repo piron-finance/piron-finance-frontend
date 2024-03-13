@@ -17,10 +17,7 @@ import { Separator } from "@/components/ui/separator";
 import Waitlist from "./Waitlist";
 
 const NavItems = [
-  {
-    name: "Deals",
-    path: "/deals",
-  },
+ 
   {
     name: "Investment Clubs",
     path: "/club",
@@ -39,6 +36,17 @@ const NavItems = [
   },
 ]
 
+const navItems2 = [
+  {
+    name: "Investors",
+    path: "/investors",
+  },
+  {
+    name: "Asset Originators",
+    path: "/borrowers",
+  },
+]
+
 const font = DM_Sans({ weight: "500", subsets: ["latin"] });
 
 const Navbar = () => {
@@ -54,6 +62,8 @@ const Navbar = () => {
       {!isMobile ? (
         <>
           <div className="flex items-center justify-between mx-8 my-4 ">
+
+            <div className="flex items-center gap-x-12">
             <Link href="/">
               <Image
                 className="w-full hover:cursor-pointer"
@@ -63,6 +73,37 @@ const Navbar = () => {
                 height={100}
               />
             </Link>
+
+            <div>
+            <ul className="flex  gap-5">
+                  <Link  href={navItems2[0].path}>
+                    <li
+                      className={cn(
+                        "font-medium  text-[#32393A] hover:cursor-pointer hover:text-[#007A86]",
+                        font.className
+                      )}
+                    >
+                      {navItems2[0].name}
+                    </li>
+                  </Link>
+
+                <div className="border-r-2 border-gray-400"  />
+
+                  <Link  href={navItems2[1].path}>
+                    <li
+                      className={cn(
+                        "font-medium  text-[#32393A] hover:cursor-pointer hover:text-[#007A86]",
+                        font.className
+                      )}
+                    >
+                      {navItems2[1].name}
+                    </li>
+                  </Link>
+             
+              </ul>
+            </div>
+
+            </div>
 
             <div className="flex items-center gap-x-6">
               <ul className="flex gap-5">
