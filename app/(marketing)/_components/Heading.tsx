@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { DM_Sans } from "next/font/google";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const font = DM_Sans({ weight: "700", subsets: ["latin"] });
@@ -37,11 +38,11 @@ const Heading = () => {
               financial and real-world assets.
             </p>
 
-            <div>
+            <Link href="/waitlist">
               <Button size="lg" className="bg-[#007A86] rounded-full">
-                Get Started
+                Join the Waitlist
               </Button>
-            </div>
+            </Link>
           </div>
 
           <div>
