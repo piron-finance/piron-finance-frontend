@@ -5,7 +5,6 @@ import { dealFlow } from "./_components/dummy";
 import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
 import { isMobile } from "react-device-detect";
-import Waitlist from "../../_components/Waitlist";
 
 const DealPage = () => {
   return (
@@ -24,24 +23,19 @@ const DealPage = () => {
             </h2>
           </div>
           <div className="flex gap-4">
-            <Waitlist>
             <Button className="bg-[#007A86] rounded-full" color="">
               View Demo
             </Button>
-            </Waitlist>
 
-            <Waitlist>
             <Button variant="outline" className="rounded-full">
               Read Docs
             </Button>
-            </Waitlist>
           </div>
         </div>
         <div>
           <Image src="dealsHeader.svg" width={500} height={500} alt="header" />
         </div>
       </div>
-      
 
       <div className="flex flex-col items-center gap-2  bg-[#00434A]">
         <div className="flex flex-col items-center gap-4 md:gap-8 my-12">
@@ -64,18 +58,24 @@ const DealPage = () => {
           />
         </div>
       </div>
-      
+
       {/* how it works */}
 
       <div className="flex flex-col items-center gap-8 my-12">
         <div className="flex flex-col items-center">
-          <h1 className="text-sm text-[#007A86] font-semibold md:font-medium py-2">How it works</h1>
+          <h1 className="text-sm text-[#007A86] font-semibold md:font-medium py-2">
+            How it works
+          </h1>
           <h1 className=" text-2xl md:text-4xl font-semibold text-gray-600 max-w-xs text-center">
             Taking Advantage of Piron Deals
           </h1>
         </div>
 
-        <div className={cn(" flex flex-col  md:grid md:grid-cols-2 items-center gap-28 mx-4 lg:mx-0", )}>
+        <div
+          className={cn(
+            " flex flex-col  md:grid md:grid-cols-2 items-center gap-28 mx-4 lg:mx-0"
+          )}
+        >
           {dealFlow.map((item, index) => (
             <div key={index} className="flex flex-col items-start ">
               <h1 className=" text-4xl md:text-6xl font-semibold text-gray-400 my-4">
@@ -92,15 +92,18 @@ const DealPage = () => {
                 <h1 className="text-2xl md:text-4xl font-semibold text-gray-700 my-1  max-w-sm ">
                   {item.title}
                 </h1>
-                <h2 className="text-xl md:text-2xl text-[#54A6AE] max-w-md">{item.subTitle}</h2>
+                <h2 className="text-xl md:text-2xl text-[#54A6AE] max-w-md">
+                  {item.subTitle}
+                </h2>
               </div>
-              <p className=" text-xs md:text-base   text-[#546162] md:max-w-sm">{item.desc}</p>
+              <p className=" text-xs md:text-base   text-[#546162] md:max-w-sm">
+                {item.desc}
+              </p>
             </div>
           ))}
         </div>
       </div>
 
-      
       <div className=" flex flex-col items-center my-20 ">
         <div
           style={{
@@ -114,18 +117,22 @@ const DealPage = () => {
           className=" flex flex-col-reverse md:flex-row justify-center bg-[#D8FCFF] rounded-lg mx-12 md:gap-10"
         >
           <div>
-            <Image className="w-[235px] lg:w-[470px]" src="bgDrop2.svg" width={470} height={370} alt="header" />
+            <Image
+              className="w-[235px] lg:w-[470px]"
+              src="bgDrop2.svg"
+              width={470}
+              height={370}
+              alt="header"
+            />
           </div>
           <div className="flex flex-col mx-4 gap-6 md:gap-20 md:my-12">
             <h1 className="text-2xl md:text-3xl text-muted-foreground font-medium md:font-semibold max-w-sm">
               Piron is used by people like yourself.
             </h1>
             <div>
-              <Waitlist>
               <Button className="bg-[#007A86] inline-flex gap-2 rounded-full">
                 Start Now <ArrowRight size={20} />
               </Button>
-              </Waitlist>
             </div>
           </div>
         </div>

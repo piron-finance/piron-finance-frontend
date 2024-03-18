@@ -5,7 +5,6 @@ import { clubFeatures, clubFeatures2 } from "./_components/dummy";
 import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
 import Footer from "../../_components/Footer";
-import Waitlist from "../../_components/Waitlist";
 
 const ClubPage = () => {
   return (
@@ -22,9 +21,7 @@ const ClubPage = () => {
             share insights and amplify your investment portfolio.
           </p>
           <span>
-            <Waitlist>
             <Button className="bg-[#007A86] rounded-full">Explore Clubs</Button>
-            </Waitlist>
           </span>
         </div>
 
@@ -38,7 +35,6 @@ const ClubPage = () => {
           />
         </div>
       </div>
-      
 
       <div className="flex flex-col lg:flex-row mx-8 md:my-20">
         <div className="w-full  lg:w-2/5">
@@ -53,7 +49,9 @@ const ClubPage = () => {
               className="flex flex-col gap-3 lg:max-w-xl  border border-[#B0D6D9] p-3 rounded-xl"
             >
               <Image src={item.image} alt="icon" width={40} height={40} />
-              <h1 className="text-xl md:text-2xl text-gray-800 max-w-sm">{item.title}</h1>
+              <h1 className="text-xl md:text-2xl text-gray-800 max-w-sm">
+                {item.title}
+              </h1>
               <p className="text-muted-foreground text-sm md:text-base max-w-sm font-light">
                 {item.desc}
               </p>
@@ -71,7 +69,9 @@ const ClubPage = () => {
               key={index}
               className={cn(
                 "flex md:items-center justify-between gap-6 py-6 px-6  lg:px-28",
-                index % 2 == 0 ? " flex-col-reverse md:flex-row" : "flex-col-reverse md:flex-row-reverse",
+                index % 2 == 0
+                  ? " flex-col-reverse md:flex-row"
+                  : "flex-col-reverse md:flex-row-reverse",
                 index == 0
                   ? "bg-[#E7F5EC]"
                   : index == 1
@@ -124,13 +124,18 @@ const ClubPage = () => {
               </div>
 
               <div className="py-4 md:py-0">
-                <Image className="w-full h-full" src={item.image} alt="icon" width={400} height={300} />
+                <Image
+                  className="w-full h-full"
+                  src={item.image}
+                  alt="icon"
+                  width={400}
+                  height={300}
+                />
               </div>
             </div>
           ))}
         </div>
       </div>
-    
 
       <div className="flex flex-col items-center">
         <div className="flex flex-col lg:flex-row items-end gap-16 my-12 px-3 md:px-0">
@@ -147,11 +152,9 @@ const ClubPage = () => {
               Friends who invest together, stay together
             </h1>
             <div>
-              <Waitlist>
               <Button className="bg-[#007A86] inline-flex gap-2 rounded-full">
                 Create a Club <ArrowRight size="20" />
               </Button>
-              </Waitlist>
             </div>
           </div>
         </div>
