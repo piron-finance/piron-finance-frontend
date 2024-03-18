@@ -10,14 +10,14 @@ const DealPage = () => {
   return (
     <div className="flex flex-col h-screen ">
       {/* header */}
-      <div className="flex flex-col-reverse md:flex-row items-center justify-between mx-8 my-16 ">
+      <div className="flex flex-col-reverse lg:flex-row lg:items-center justify-between mx-4 lg:mx-8 my-16 ">
         <div className="flex flex-col gap-8">
           <div className="flex flex-col gap-5 items-start md:max-w-lg">
-            <h1 className=" text-3xl  md:text-5xl font-semibold text-gray-700">
+            <h1 className=" text-3xl  lg:text-5xl font-semibold text-gray-700">
               Achieve Your Financial Goals By Participating in
               <span className="text-[#007A86]"> Deals </span>
             </h1>
-            <h2 className="text-muted-foreground font-light md:text-lg">
+            <h2 className="text-muted-foreground font-light lg:text-lg">
               Explore a new world of asset backed opportunities, seamlessly{" "}
               <span className="italic text-[#EF841F]"> powered by Piron.</span>
             </h2>

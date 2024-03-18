@@ -10,13 +10,14 @@ const ClubPage = () => {
   return (
     <div className="flex flex-col  h-screen ">
       {/* header */}
-      <div className="flex flex-col-reverse md:flex-row items-center justify-between mx-4 md:mx-8 my-28">
-        <div className="flex flex-col items-center md:items-start gap-8 md:max-w-lg">
-          <h1 className=" text-4xl md:text-5xl text-center md:text-start font-semibold ">
+      <div className="flex flex-col-reverse lg:flex-row md:items-center lg:justify-between mx-4 lg:mx-8 my-16">
+        {" "}
+        <div className="flex flex-col items-center  gap-8 lg:max-w-lg">
+          <h1 className=" text-4xl md:text-5xl text-center mt-12 lg:mt-0 font-semibold ">
             <span className="text-[#007A86]">Join an Investment Club </span> -{" "}
             <span className="text-gray-400"> Collaborate, Invest, Grow </span>
           </h1>
-          <p className=" text-muted-foreground  text-center md:text-start md:max-w-md">
+          <p className=" text-muted-foreground  text-center  md:max-w-md">
             Discover the power of collective investment. Team up with peers,
             share insights and amplify your investment portfolio.
           </p>
@@ -24,7 +25,6 @@ const ClubPage = () => {
             <Button className="bg-[#007A86] rounded-full">Explore Clubs</Button>
           </span>
         </div>
-
         <div>
           <Image
             src="clubHeader.svg"
