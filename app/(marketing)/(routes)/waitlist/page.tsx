@@ -28,20 +28,20 @@ const WaitlistPage = () => {
               width: "100%",
               height: "500px",
             }}
-            className=" flex flex-col md:flex-row  items-center px-8  py-8 justify-around "
+            className=" flex flex-col lg:flex-row  lg:items-center px-4  lg:px-8 my-8 lg:justify-around "
           >
-            <div className="mt-3 md:mt-0">
+            <div className="mt-3 items-center flex flex-col lg:flex-none md:mt-0  h-2/5 lg:h-auto ">
               <Image
                 src="/waitlistHeader.svg"
-                className="w-[222px] h-[225px] md:w-[380px] md:h-[380px] "
+                className=" w-[222px] h-[225px] md:w-[300px] md:h-[300px]  lg:-mt-0 lg:w-[380px] lg:h-[380px] "
                 alt="logo"
                 width={380}
                 height={380}
               />
             </div>
-            <div className="flex flex-col gap-3 max-w-xl">
-              <h1 className=" text-2xl md:text-4xl text-[#EF841F]">Access</h1>
-              <h1 className=" text-3xl md:text-5xl font-semibold text-gray-700 ">
+            <div className="flex flex-col gap-3 lg:max-w-xl mt-16 lg:mt-0">
+              <h1 className=" text-2xl lg:text-4xl text-[#EF841F]">Access</h1>
+              <h1 className=" text-3xl lg:text-5xl font-semibold text-gray-700 ">
                 Real-World Opportunities{" "}
                 <span className="text-[#007A86]"> On-Chain </span>{" "}
               </h1>
@@ -49,7 +49,7 @@ const WaitlistPage = () => {
                 We unlock a world of possibilities for both investors and asset
                 originators.
               </p>
-              <div className="my-4">
+              <div className=" my-2 lg:my-4">
                 <Button
                   onClick={handleWaitlistModal}
                   size="lg"
@@ -80,7 +80,7 @@ const WaitlistPage = () => {
               </p>
             </div>
 
-            <div className=" grid grid-cols-3 md:grid-cols-6 items-center px-4 md:px-0 gap-12 pb-12 ">
+            <div className=" grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 items-center px-4  gap-12 pb-12 ">
               {data.map((item, index) => (
                 <div className="flex flex-col gap-3" key={index}>
                   <div>
