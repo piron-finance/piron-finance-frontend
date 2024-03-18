@@ -14,10 +14,8 @@ import {
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { Separator } from "@/components/ui/separator";
-import Waitlist from "./Waitlist";
 
 const NavItems = [
- 
   {
     name: "Investment Clubs",
     path: "/club",
@@ -34,7 +32,7 @@ const NavItems = [
     name: "Docs",
     path: "/",
   },
-]
+];
 
 const navItems2 = [
   {
@@ -45,7 +43,7 @@ const navItems2 = [
     name: "Asset Originators",
     path: "/borrowers",
   },
-]
+];
 
 const font = DM_Sans({ weight: "500", subsets: ["latin"] });
 
@@ -55,28 +53,27 @@ const Navbar = () => {
 
   const toggle = () => {
     setIsOpen(!isOpen);
-  }
+  };
 
   return (
     <>
       {!isMobile ? (
         <>
           <div className="flex items-center justify-between mx-8 my-4 ">
-
             <div className="flex items-center gap-x-12">
-            <Link href="/">
-              <Image
-                className="w-full hover:cursor-pointer"
-                src="/logo66.svg"
-                alt="logo"
-                width={100}
-                height={100}
-              />
-            </Link>
+              <Link href="/">
+                <Image
+                  className="w-full hover:cursor-pointer"
+                  src="/logo66.svg"
+                  alt="logo"
+                  width={100}
+                  height={100}
+                />
+              </Link>
 
-            <div>
-            <ul className="flex  gap-5">
-                  <Link  href={navItems2[0].path}>
+              <div>
+                <ul className="flex  gap-5">
+                  <Link href={navItems2[0].path}>
                     <li
                       className={cn(
                         "font-medium  text-[#32393A] hover:cursor-pointer hover:text-[#007A86]",
@@ -87,9 +84,9 @@ const Navbar = () => {
                     </li>
                   </Link>
 
-                <div className="border-r-2 border-gray-400"  />
+                  <div className="border-r-2 border-gray-400" />
 
-                  <Link  href={navItems2[1].path}>
+                  <Link href={navItems2[1].path}>
                     <li
                       className={cn(
                         "font-medium  text-[#32393A] hover:cursor-pointer hover:text-[#007A86]",
@@ -99,10 +96,8 @@ const Navbar = () => {
                       {navItems2[1].name}
                     </li>
                   </Link>
-             
-              </ul>
-            </div>
-
+                </ul>
+              </div>
             </div>
 
             <div className="flex items-center gap-x-6">
@@ -121,12 +116,9 @@ const Navbar = () => {
                 ))}
               </ul>
 
-              <Waitlist>
-                <Button className="bg-[#007A86] rounded-full px-6" size="lg">
-                  Launch App
-                </Button>
-                </Waitlist>
-            
+              <Button className="bg-[#007A86] rounded-full px-6" size="lg">
+                Launch App
+              </Button>
             </div>
           </div>
           <Separator />
@@ -135,23 +127,21 @@ const Navbar = () => {
         /// fix nav content for mobile view. fix also: suspending laoding the page till usemedia hook is done. ie, until ismobile is valid, page stays loading
         // feat: implement lazy loading and newsletter. fix footer hover color
         <>
-        <div className="flex items-center justify-between mx-8 py-4">
-        <Link href="/">
-            <Image
-              className=""
-              src="/logo66.svg"
-              alt="logo"
-              width={100}
-              height={100}
-            />
-          </Link>
-          <div>
-            
-                <Menu className="hover:cursor-pointer" onClick={toggle} />
-            
+          <div className="flex items-center justify-between mx-8 py-4">
+            <Link href="/">
+              <Image
+                className=""
+                src="/logo66.svg"
+                alt="logo"
+                width={100}
+                height={100}
+              />
+            </Link>
+            <div>
+              <Menu className="hover:cursor-pointer" onClick={toggle} />
+            </div>
           </div>
-        </div>
-        <Separator />
+          <Separator />
         </>
       )}
 
@@ -164,51 +154,41 @@ const Navbar = () => {
           }}
         >
           <div className="flex items-center justify-between">
-          <div>
-            <Image
-              className=""
-              src="/logo66.svg"
-              alt="logo"
-              width={100}
-              height={100}
-            />
-          </div>
-          
-          <X  size={28} className="hover:cursor-pointer" onClick={toggle} />
+            <div>
+              <Image
+                className=""
+                src="/logo66.svg"
+                alt="logo"
+                width={100}
+                height={100}
+              />
+            </div>
 
+            <X size={28} className="hover:cursor-pointer" onClick={toggle} />
           </div>
 
           <div className="flex flex-col ">
-          <ul className="flex flex-col gap-5">
-          <Link href="/" >
-            <li onClick={toggle}>
-            Investors
-            </li>
-            </Link>
+            <ul className="flex flex-col gap-5">
+              <Link href="/investors">
+                <li onClick={toggle}>Investors</li>
+              </Link>
 
-            <Link href="/" >
-            <li onClick={toggle}>
-             Asset Originators
-            </li>
-            </Link>
-            <Separator />
+              <Link href="/borrowers">
+                <li onClick={toggle}>Asset Originators</li>
+              </Link>
+              <Separator />
 
-            {NavItems.map((item, index) => (
-               <Link href={item.path} key={index} >
-            <li onClick={toggle} >
-             {item.name}
-            </li>
-            </Link>
+              {NavItems.map((item, index) => (
+                <Link href={item.path} key={index}>
+                  <li onClick={toggle}>{item.name}</li>
+                </Link>
+              ))}
+            </ul>
 
-            ))}
-          </ul>
-          <Waitlist>
-          <Button className="bg-[#007A86] rounded-lg  mt-8 px-6" size="lg">
-            Launch App
-          </Button>
-          </Waitlist>
+            <Button className="bg-[#007A86] rounded-lg  mt-8 px-6" size="lg">
+              Launch App
+            </Button>
           </div>
-          
         </div>
       )}
     </>
