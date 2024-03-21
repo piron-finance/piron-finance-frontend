@@ -5,11 +5,6 @@ import React from "react";
 import { DM_Sans } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { useMediaQuery } from "usehooks-ts";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
@@ -20,17 +15,13 @@ const NavItems = [
     name: "Investment Clubs",
     path: "/club",
   },
-  // {
-  //   name: "For Asset Originators",
-  //   path: "/",
-  // },
   {
     name: "Blog",
     path: "https://mirror.xyz/0x6fE7fBbD0Bbb6f51A02613F4e00895511FA26457",
   },
   {
     name: "Docs",
-    path: "/",
+    path: "https://piron-finance.gitbook.io/piron-finance/",
   },
 ];
 

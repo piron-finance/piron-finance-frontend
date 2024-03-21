@@ -32,16 +32,16 @@ const getTextColorClass = (poolStatus: string) => {
 
 const page = () => {
   return (
-    <div className="flex flex-col h-full">
-      <Navbar page="deals" />
+    <div className="flex flex-col h-full bg-slate-100">
+      <Navbar page="Deals" />
       <Header />
 
-      <div>
-        <div className="flex flex-col mx-4 my-12">
-          <div className="flex flex-col my-4">
-            <h1 className="text-2xl  text-gray-600">All Deals</h1>
+      <div className="rounded-xl bg-white shadow-md mx-6 mt-4">
+        <div className="flex flex-col mx-4 my-4">
+          <div className="flex flex-col my-4 ml-8">
+            <h1 className="text-lg font-medium">All Deals</h1>
             <p className="text-sm text-muted-foreground">
-              Get access to all deals
+              Get access to all deals across different asset classes
             </p>
           </div>
 
