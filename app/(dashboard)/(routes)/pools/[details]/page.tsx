@@ -1,12 +1,116 @@
 import Navbar from "@/app/(dashboard)/_components/Navbar";
-import React from "react";
 import Header from "./_components/header";
+import { detailsData } from "./_components/dummy";
+import { Button } from "@/components/ui/button";
 
 const page = () => {
   return (
     <div className="flex flex-col h-full ">
       <Navbar status="Open" page="Piron Credit Deal 1" dynamic />
       <Header />
+
+      <div className="flex  ">
+        <div className="mx-2 p-8 my-4 bg-white rounded-xl shadow-sm w-3/4 ">
+          <h1 className="text-lg text-muted-foreground font-medium mb-8">
+            Details
+          </h1>
+          <div className="flex flex-col gap-4">
+            {detailsData.map((item, index) => (
+              <div className="" key={index}>
+                <h1 className="text-2xl text-[#546162] font-semibold my-3">
+                  {item.title}
+                </h1>
+                <p className="text-muted-foreground text-sm">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="flex flex-col mx-2 my-4 gap-4  w-1/4 ">
+          <div className="flex flex-col gap-3 bg-white rounded-xl shadow-sm p-8">
+            <h1 className="text-[#546162] font-medium">Your Statistics</h1>
+            <h2 className="text-muted-foreground text-sm">
+              Balance <span className=""> 0.00 USDC </span>
+            </h2>
+            <h2 className="text-muted-foreground text-sm">
+              Interest Earned <span className=""> 0.00 USDC </span>
+            </h2>
+            <Button size="lg" className="rounded-full bg-gray-500">
+              Login to Invest
+            </Button>
+          </div>
+
+          <div className="flex flex-col gap-3 bg-white rounded-xl shadow-sm p-8">
+            <h1 className="text-[#546162] font-medium">Deal Health</h1>
+            <p className="text-muted-foreground text-sm">
+              Outstanding Principal N/A
+            </p>
+            <p className="text-muted-foreground text-sm">
+              Outstanding Interest N/A
+            </p>
+            <p className="text-muted-foreground text-sm">Total Repayment N/A</p>
+            <p className="text-muted-foreground text-sm">Health Status Good</p>
+          </div>
+
+          <div className="flex flex-col gap-3 bg-white rounded-xl shadow-sm p-8">
+            <h1 className="text-[#546162] font-medium">Timelines</h1>
+            <p className="text-muted-foreground text-sm">
+              Launch Date{" "}
+              <span className="ml-1 text-gray-700 font-semibold">
+                23rd February 2024
+              </span>
+            </p>
+            <p className="text-muted-foreground text-sm">
+              Close Date{" "}
+              <span className="ml-1 text-gray-700 font-semibold">
+                23rd March 2024
+              </span>
+            </p>
+            <p className="text-muted-foreground text-sm">
+              Maturity Date{" "}
+              <span className="ml-1 text-gray-700 font-semibold">
+                23rd Dec 2024
+              </span>
+            </p>
+            <p className="text-muted-foreground text-sm">
+              Offering Term{" "}
+              <span className="ml-1 text-gray-700 font-semibold">180 days</span>
+            </p>
+          </div>
+
+          <div className="flex flex-col gap-3 bg-white rounded-xl shadow-sm p-8">
+            <h1 className="text-[#546162] font-medium">
+              Requirements for Investors
+            </h1>
+            <p className="text-muted-foreground text-sm">
+              Verified Identity (KYC)
+            </p>
+            <p className="text-muted-foreground text-sm">
+              Non-US Investors only
+            </p>
+            <p className="text-muted-foreground text-sm">
+              $100 minimum Investment
+            </p>
+          </div>
+
+          <div className="flex flex-col gap-3 bg-white rounded-xl shadow-sm p-8">
+            <h1 className="text-[#546162] font-medium">Fees</h1>
+            <p className="text-muted-foreground text-sm">
+              Protocol Fee{" "}
+              <span className="ml-1 text-gray-700 font-semibold">0%</span>
+            </p>
+            <p className="text-muted-foreground text-sm">
+              Management Fee{" "}
+              <span className="ml-1 text-gray-700 font-semibold">3%</span>
+            </p>
+          </div>
+
+          <div className="flex flex-col gap-3 bg-white rounded-xl shadow-sm p-8">
+            <h1 className="text-[#546162] font-medium">Funding Strategy</h1>
+            <p className="text-muted-foreground text-sm">Immediate Funding</p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
