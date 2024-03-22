@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const Header = () => {
   return (
-    <div className="flex flex-col gap-6 bg-white mx-6 rounded-2xl shadow-sm  ">
+    <div className="flex flex-col gap-6 bg-white mx-2 rounded-2xl shadow-sm  ">
       <div className=" ml-10 mt-6">
         <h1 className="text-lg font-medium">Protocol Overview</h1>
       </div>
