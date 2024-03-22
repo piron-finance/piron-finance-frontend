@@ -20,11 +20,13 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
       className="flex items-center h-screen dark:bg-[#0e0e0e]"
       suppressHydrationWarning
     >
-      <Navigation isCollapsed={isCollapsed} setIsCollapsed={setIsCollapsed} />
+      <nav className=" no-scrollbar   ">
+        <Navigation isCollapsed={isCollapsed} setIsCollapsed={setIsCollapsed} />
+      </nav>
 
       <main
         className={cn(
-          "flex flex-col w-full   h-screen overflow-y-scroll ",
+          "flex flex-col w-full   h-full bg-slate-100 overflow-y-scroll ",
           isMobile && !isCollapsed ? "opacity-0" : ""
         )}
       >

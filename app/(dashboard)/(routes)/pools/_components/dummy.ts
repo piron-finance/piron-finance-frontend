@@ -98,3 +98,26 @@ export const cardItem = [
     duration: "9 months",
   },
 ];
+
+export const headerData = [
+  {
+    icon: "/dashboard/frame1.svg",
+    title: "Total Amount Raised",
+    amount: "$2,000,000",
+  },
+  {
+    icon: "/dashboard/frame2.svg",
+    title: "Total Repayment",
+    amount: "$500,000",
+  },
+  {
+    icon: "/dashboard/frame3.svg",
+    title: "Total Interest Accrued",
+    amount: "$500,000",
+  },
+  {
+    icon: "/dashboard/frame4.svg",
+    title: "Total Deals",
+    amount: "450",
+  },
+];

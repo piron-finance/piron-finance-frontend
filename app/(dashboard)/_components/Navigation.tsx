@@ -98,7 +98,7 @@ const Navigation = ({ isCollapsed, setIsCollapsed }: PageProps) => {
       <aside
         ref={sidebarRef}
         className={cn(
-          " group/sidebar h-screen bg-teal overflow-y-auto  relative flex  w-[240px] flex-col  no-scrollbar",
+          " group/sidebar h-screen bg-teal overflow-y-auto border-r   relative flex  w-[256px] flex-col  no-scrollbar ",
           isResetting && "transition-all ease-in-out duration-300",
           isMobile && "w-0",
           isCollapsed && "w-0"
@@ -106,7 +106,7 @@ const Navigation = ({ isCollapsed, setIsCollapsed }: PageProps) => {
       >
         {/* Logo */}
         <div className="flex items-center justify-between my-8 mx-6">
-          <Image src="/dashLogo.svg" alt="logo" width={150} height={150} />
+          <Image src="/dashLogo.svg" alt="logo" width={140} height={40} />
 
           <div
             onClick={collapse}
@@ -148,8 +148,6 @@ const Navigation = ({ isCollapsed, setIsCollapsed }: PageProps) => {
           </ul>
         </div>
       </aside>
-
-      <Separator orientation="vertical" className="z-[99999] " />
 
       {/* mobile */}
       <div
