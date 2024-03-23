@@ -143,22 +143,27 @@ const page = () => {
                     </span>
                   </h1>
                   <h1 className="text-sm text-muted-foreground">
-                    View on-chain reputation <span className="font-semibold text-gray-600">0xdc01...5d476a</span>
+                    View on-chain reputation{" "}
+                    <span className="font-semibold text-gray-600">
+                      0xdc01...5d476a
+                    </span>
                   </h1>
                 </div>
                 <div>
-                <h1 className="text-sm text-muted-foreground">
-                    Deals Launched <span className="font-semibold text-gray-600">>2</span>
+                  <h1 className="text-sm text-muted-foreground">
+                    Deals Launched{" "}
+                    <span className="font-semibold text-gray-600">2</span>
                   </h1>
                   <h1 className="text-sm text-muted-foreground">
-                    Health Status <span className="font-semibold text-gray-600">good</span>
+                    Health Status{" "}
+                    <span className="font-semibold text-gray-600">good</span>
                   </h1>
                 </div>
               </div>
             </div>
 
             <div className="flex flex-col gap-2">
-            <h1 className="text-xl font-medium text-[#546162]">Contact</h1>
+              <h1 className="text-xl font-medium text-[#546162]">Contact</h1>
               <div className="text-muted-foreground text-sm">
                 <p>Email: ir@adapt3r.com</p>
                 <p>Website: adapt3r.com</p>
@@ -167,8 +172,8 @@ const page = () => {
           </div>
 
           <div className="flex flex-col gap-4 w-1/2">
-          <h1 className="text-[#546162] text-2xl font-semibold ">Team</h1>
-          <p className="text-muted-foreground text-sm">
+            <h1 className="text-[#546162] text-2xl font-semibold ">Team</h1>
+            <p className="text-muted-foreground text-sm">
               Our team combines multifaceted expertise in the asset management
               industry, spanning private credit, securitization, and digital
               assets.
