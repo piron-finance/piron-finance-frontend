@@ -28,3 +28,21 @@ export const detailsData = [
     desc: "Adapt3r Digital, as a U.S.-based fund manager, complies with U.S. regulatory standards for compliance and asset management. Additionally, the Fund, which is incorporated in the British Virgin Islands, complies with the relevant regulations of its jurisdiction and has applied for approval with applicable BVI fund regulators. Our collaboration with institutional-grade, regulated service providers across both territories strengthens our commitment to high standards of compliance, making the Fund a trusted choice for investors seeking to preserve capital and earn yield in a compliant manner.",
   },
 ];
+
+export const TeamData = [
+  {
+    img: "/portfolioImg.jpg",
+    role: "CIO",
+    name: "Marcus Lim",
+  },
+  {
+    img: "/portfolioImg.jpg",
+    role: "CIO",
+    name: "Marcus Lim",
+  },
+  {
+    img: "/portfolioImg.jpg",
+    role: "CIO",
+    name: "Marcus Lim",
+  },
+];
