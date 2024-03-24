@@ -5,6 +5,10 @@ import { Button } from "@/components/ui/button";
 import TeamCard from "./_components/TeamCard";
 import Offchain from "./_components/Offchain";
 import Footer from "@/app/(dashboard)/_components/Footer";
+import { useState } from "react";
+import InvestModal from "./_components/InvestModal";
+
+// todo: disable invest button till wallet is connected
 
 const page = () => {
   return (
@@ -38,9 +42,11 @@ const page = () => {
             <h2 className="text-muted-foreground text-sm">
               Interest Earned <span className=""> 0.00 USDC </span>
             </h2>
-            <Button size="lg" className="rounded-full bg-gray-500">
-              Login to Invest
-            </Button>
+            <InvestModal>
+              <Button size="lg" className="rounded-full bg-[#007A86]">
+                Login to Invest
+              </Button>
+            </InvestModal>
           </div>
 
           <div className="flex flex-col gap-3 bg-white rounded-xl shadow-sm p-8">
