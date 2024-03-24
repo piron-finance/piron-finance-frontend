@@ -3,6 +3,8 @@ import Header from "./_components/header";
 import { TeamData, detailsData } from "./_components/dummy";
 import { Button } from "@/components/ui/button";
 import TeamCard from "./_components/TeamCard";
+import Offchain from "./_components/Offchain";
+import Footer from "@/app/(dashboard)/_components/Footer";
 
 const page = () => {
   return (
@@ -191,6 +193,12 @@ const page = () => {
           </div>
         </div>
       </div>
+
+      <div className="bg-white shadow-sm mx-2 rounded-xl p-8 my-4">
+        <Offchain />
+      </div>
+
+      <Footer />
     </div>
   );
 };
