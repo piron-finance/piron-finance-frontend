@@ -14,6 +14,7 @@ import type {
   FilterApi,
   FunctionReference,
 } from "convex/server";
+import type * as pools from "../pools.js";
 import type * as waitlist from "../waitlist.js";
 
 /**
@@ -25,6 +26,7 @@ import type * as waitlist from "../waitlist.js";
  * ```
  */
 declare const fullApi: ApiFromModules<{
+  pools: typeof pools;
   waitlist: typeof waitlist;
 }>;
 export declare const api: FilterApi<
