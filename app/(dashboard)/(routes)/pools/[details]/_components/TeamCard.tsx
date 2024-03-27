@@ -14,7 +14,7 @@ const TeamCard = ({ img, role, name }: TeamCardProps) => {
       <div>
         <Image
           className="w-full rounded-sm "
-          src={img}
+          src={img ? img : "/portfolioImg.jpg"}
           alt="team member"
           width={126}
           height={100}

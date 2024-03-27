@@ -2,31 +2,26 @@ import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import StatusCard from "./StatusCard";
+import { Doc, Id } from "@/convex/_generated/dataModel";
 
 interface PoolCardProps {
-  item: {
-    poolStatus: string;
-    poolTtile: string;
-    assetType: string;
-    yield: string;
-    duration: string;
-  };
+  item: Doc<"pools">;
   index: number;
 }
 
 const PoolCard = ({ item, index }: PoolCardProps) => {
   return (
-    <Link href="/pools/1">
+    <Link href={`/pools/${item._id}`}>
       <div className="flex flex-col gap-6 p-6 shadow-sm  border rounded-xl hover:cursor-pointer">
         <StatusCard poolStatus={item.poolStatus} />
 
         <div className="flex items-center justify-between my-6">
           <h1 className="text-3xl font-medium text-[#32393A]">
-            {item.poolTtile}
+            {item.poolName}
           </h1>
 
           <h1 className="text-lg text-[#546162]">
-            <span className="text-gray-400">by</span> Piron Capital
+            <span className="text-gray-400">by</span> {item.assetOriginatorName}
           </h1>
         </div>
 
@@ -34,23 +29,23 @@ const PoolCard = ({ item, index }: PoolCardProps) => {
 
         <div className="flex items-center justify-between">
           <span className="flex flex-col gap-1">
-            <h1 className="text-[#414B4C] font-medium">$5,000,000</h1>
+            <h1 className="text-[#414B4C] font-medium">N{item.targetRaise}</h1>
             <p className="text-xs text-muted-foreground">Target Raise</p>
           </span>
 
           <span className="flex flex-col gap-1">
-            <h1 className="text-[#414B4C] font-medium">$230,945.56</h1>
+            <h1 className="text-[#414B4C] font-medium">N{item.totalRaised}</h1>
             <p className="text-xs text-muted-foreground">Total Raised</p>
           </span>
 
           <span className="flex flex-col gap-1">
-            <h1 className="text-[#414B4C] font-medium">180 days</h1>
+            <h1 className="text-[#414B4C] font-medium">{item.duration} days</h1>
             <p className="text-xs text-muted-foreground">Offering Term</p>
           </span>
 
           <span>
             <h1 className="text-muted-foreground text-sm">Estimated Yield</h1>
-            <p className="text-[#0E8938] font-medium">9.12%</p>
+            <p className="text-[#0E8938] font-medium">{item.yield}%</p>
           </span>
 
           <span>
@@ -67,7 +62,7 @@ const PoolCard = ({ item, index }: PoolCardProps) => {
 
           <span>
             <h1 className="text-muted-foreground text-sm">Launch Date</h1>
-            <p className="text-[#414B4C] font-medium">12-01-2024</p>
+            <p className="text-[#414B4C] font-medium">{item.launchDate}</p>
           </span>
         </div>
       </div>
