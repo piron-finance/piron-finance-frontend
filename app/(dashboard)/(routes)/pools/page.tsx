@@ -11,7 +11,7 @@ import PoolCard from "./_components/PoolCard";
 import { useQuery } from "convex/react";
 import { api } from "@/convex/_generated/api";
 
-const page = () => {
+const PoolDashboardPage = () => {
   const pools = useQuery(api.pools.getPools);
 
   if (pools === undefined) {
@@ -77,4 +77,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default PoolDashboardPage;

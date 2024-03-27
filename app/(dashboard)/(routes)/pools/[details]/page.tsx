@@ -13,7 +13,7 @@ import { Id } from "@/convex/_generated/dataModel";
 
 // todo: disable invest button till wallet is connected. figure pool title and launch date
 
-const page = () => {
+const PoolDetailsPage = () => {
   const params = useParams();
   const pool = useQuery(api.pools.getPoolsById, {
     poolId: params.details as Id<"pools">,
@@ -257,4 +257,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default PoolDetailsPage;
