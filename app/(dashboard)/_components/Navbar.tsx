@@ -31,9 +31,13 @@ const Navbar = ({ page, status, dynamic }: Props) => {
             <StatusCard poolStatus={status} />
           </div>
         )}
-        <div>
+        <div className="flex gap-2 items-center">
           <Button className="rounded-full bg-[#007A86]" size="lg">
             Connect Wallet
+          </Button>
+
+          <Button className="rounded-full bg-[#007A86]" size="lg">
+            Add a Pool
           </Button>
         </div>
       </div>

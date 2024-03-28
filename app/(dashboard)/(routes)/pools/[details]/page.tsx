@@ -1,19 +1,49 @@
+"use client";
 import Navbar from "@/app/(dashboard)/_components/Navbar";
 import Header from "./_components/header";
-import { TeamData, detailsData } from "./_components/dummy";
 import { Button } from "@/components/ui/button";
 import TeamCard from "./_components/TeamCard";
 import Offchain from "./_components/Offchain";
 import Footer from "@/app/(dashboard)/_components/Footer";
-import { useState } from "react";
 import InvestModal from "./_components/InvestModal";
+import { useQuery } from "convex/react";
+import { api } from "@/convex/_generated/api";
+import { useParams } from "next/navigation";
+import { Id } from "@/convex/_generated/dataModel";
 
-// todo: disable invest button till wallet is connected
+// todo: disable invest button till wallet is connected. figure pool title and launch date
 
-const page = () => {
+const PoolDetailsPage = () => {
+  const params = useParams();
+  const pool = useQuery(api.pools.getPoolsById, {
+    poolId: params.details as Id<"pools">,
+  });
+
+  const assetOriginator = useQuery(api.pools.getAssetOriginatorByPoolId, {
+    poolId: params.details as Id<"pools">,
+  });
+
+  if (pool === undefined) {
+    return <div>Loading...</div>;
+  }
+
+  if (pool === null) {
+    return <div>Not found</div>;
+  }
+
+  // todo: ensure only the asset originator section loads when the pool details are available
+
+  if (assetOriginator === undefined) {
+    return <div>Loading...</div>;
+  }
+
+  if (assetOriginator === null) {
+    return <div>Not found</div>;
+  }
+
   return (
     <div className="flex flex-col h-full ">
-      <Navbar status="Open" page="Piron Credit Deal 1" dynamic />
+      <Navbar status={pool.poolStatus} page={pool.poolName} dynamic />
       <Header />
 
       <div className="flex  ">
@@ -22,7 +52,7 @@ const page = () => {
             Details
           </h1>
           <div className="flex flex-col gap-4">
-            {detailsData.map((item, index) => (
+            {pool.details.map((item: any, index) => (
               <div className="" key={index}>
                 <h1 className="text-2xl text-[#546162] font-semibold my-3">
                   {item.title}
@@ -52,13 +82,30 @@ const page = () => {
           <div className="flex flex-col gap-3 bg-white rounded-xl shadow-sm p-8">
             <h1 className="text-[#546162] font-medium">Deal Health</h1>
             <p className="text-muted-foreground text-sm">
-              Outstanding Principal N/A
+              Outstanding Principal{" "}
+              <span className="ml-1 text-gray-700 font-semibold">
+                {" "}
+                {pool.outstandingPrincipal} USDC{" "}
+              </span>
             </p>
             <p className="text-muted-foreground text-sm">
-              Outstanding Interest N/A
+              Outstanding Interest{" "}
+              <span className="ml-1 text-gray-700 font-semibold">
+                {pool.outstandingInterest} USDC{" "}
+              </span>
             </p>
-            <p className="text-muted-foreground text-sm">Total Repayment N/A</p>
-            <p className="text-muted-foreground text-sm">Health Status Good</p>
+            <p className="text-muted-foreground text-sm">
+              Total Repayment{" "}
+              <span className="ml-1 text-gray-700 font-semibold">
+                {pool.totalRepayment} USDC{" "}
+              </span>{" "}
+            </p>
+            <p className="text-muted-foreground text-sm">
+              Health Status{" "}
+              <span className="ml-1 text-gray-700 font-semibold">
+                {pool.health}
+              </span>{" "}
+            </p>
           </div>
 
           <div className="flex flex-col gap-3 bg-white rounded-xl shadow-sm p-8">
@@ -66,24 +113,26 @@ const page = () => {
             <p className="text-muted-foreground text-sm">
               Launch Date{" "}
               <span className="ml-1 text-gray-700 font-semibold">
-                23rd February 2024
+                {pool.launchDate}
               </span>
             </p>
             <p className="text-muted-foreground text-sm">
               Close Date{" "}
               <span className="ml-1 text-gray-700 font-semibold">
-                23rd March 2024
+                {pool.closeDate}
               </span>
             </p>
             <p className="text-muted-foreground text-sm">
               Maturity Date{" "}
               <span className="ml-1 text-gray-700 font-semibold">
-                23rd Dec 2024
+                {pool.maturityDate}
               </span>
             </p>
             <p className="text-muted-foreground text-sm">
               Offering Term{" "}
-              <span className="ml-1 text-gray-700 font-semibold">180 days</span>
+              <span className="ml-1 text-gray-700 font-semibold">
+                {pool.duration} days
+              </span>
             </p>
           </div>
 
@@ -91,26 +140,26 @@ const page = () => {
             <h1 className="text-[#546162] font-medium">
               Requirements for Investors
             </h1>
-            <p className="text-muted-foreground text-sm">
-              Verified Identity (KYC)
-            </p>
-            <p className="text-muted-foreground text-sm">
-              Non-US Investors only
-            </p>
-            <p className="text-muted-foreground text-sm">
-              $100 minimum Investment
-            </p>
+            {pool.requirements.map((item: any, index) => (
+              <p key={index} className="text-muted-foreground text-sm">
+                {item}
+              </p>
+            ))}
           </div>
 
           <div className="flex flex-col gap-3 bg-white rounded-xl shadow-sm p-8">
             <h1 className="text-[#546162] font-medium">Fees</h1>
             <p className="text-muted-foreground text-sm">
               Protocol Fee{" "}
-              <span className="ml-1 text-gray-700 font-semibold">0%</span>
+              <span className="ml-1 text-gray-700 font-semibold">
+                {pool.fees.map((item) => item.protocol)}%
+              </span>
             </p>
             <p className="text-muted-foreground text-sm">
               Management Fee{" "}
-              <span className="ml-1 text-gray-700 font-semibold">3%</span>
+              <span className="ml-1 text-gray-700 font-semibold">
+                {pool.fees.map((item) => item.management)}%
+              </span>
             </p>
           </div>
 
@@ -132,11 +181,7 @@ const page = () => {
                 Description
               </h1>
               <p className="text-muted-foreground text-sm">
-                Adapt3r Digital LLC (“Adapt3r Digital”) is a U.S.-based fund
-                manager specializing in short-term U.S. Treasury Bills. Our team
-                combines multifaceted expertise in the asset management
-                industry, spanning private credit, securitization, and digital
-                assets.
+                {assetOriginator.description}
               </p>
             </div>
 
@@ -147,7 +192,7 @@ const page = () => {
                   <h1 className="text-sm text-muted-foreground">
                     Total raised{" "}
                     <span className="font-semibold text-gray-600">
-                      $17,100,000
+                      {assetOriginator.totalRaised}
                     </span>
                   </h1>
                   <h1 className="text-sm text-muted-foreground">
@@ -160,11 +205,15 @@ const page = () => {
                 <div>
                   <h1 className="text-sm text-muted-foreground">
                     Deals Launched{" "}
-                    <span className="font-semibold text-gray-600">2</span>
+                    <span className="font-semibold text-gray-600">
+                      {assetOriginator.dealsLaunched}
+                    </span>
                   </h1>
                   <h1 className="text-sm text-muted-foreground">
                     Health Status{" "}
-                    <span className="font-semibold text-gray-600">good</span>
+                    <span className="font-semibold text-gray-600">
+                      {assetOriginator.health}
+                    </span>
                   </h1>
                 </div>
               </div>
@@ -172,26 +221,25 @@ const page = () => {
 
             <div className="flex flex-col gap-2">
               <h1 className="text-xl font-medium text-[#546162]">Contact</h1>
-              <div className="text-muted-foreground text-sm">
-                <p>Email: ir@adapt3r.com</p>
-                <p>Website: adapt3r.com</p>
-              </div>
+              {assetOriginator.contact.map((item, index) => (
+                <div key={index} className="text-muted-foreground text-sm">
+                  <p>{item}</p>
+                </div>
+              ))}
             </div>
           </div>
 
           <div className="flex flex-col gap-4 w-1/2">
             <h1 className="text-[#546162] text-2xl font-semibold ">Team</h1>
             <p className="text-muted-foreground text-sm">
-              Our team combines multifaceted expertise in the asset management
-              industry, spanning private credit, securitization, and digital
-              assets.
+              {assetOriginator.teamDesc}
             </p>
             <div className="grid grid-cols-3 gap-3 max-w-lg">
-              {TeamData.map((item, index) => (
+              {assetOriginator.team.map((item, index) => (
                 <TeamCard
                   key={index}
-                  img={item.img}
-                  role={item.role}
+                  img={item.image}
+                  role={item.title}
                   name={item.name}
                 />
               ))}
@@ -209,4 +257,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default PoolDetailsPage;

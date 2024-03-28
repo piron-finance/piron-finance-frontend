@@ -1,16 +1,27 @@
 "use client";
 import Header from "./_components/Header";
 import { Input } from "@/components/ui/input";
-import { ChevronRight, Filter, Search, Zap } from "lucide-react";
-import { cardItem } from "./_components/dummy";
+import { Search } from "lucide-react";
 
 import Footer from "../../_components/Footer";
 import Navbar from "../../_components/Navbar";
 import FilterSelector from "./_components/FilterSelector";
 import { Switch } from "@/components/ui/switch";
 import PoolCard from "./_components/PoolCard";
+import { useQuery } from "convex/react";
+import { api } from "@/convex/_generated/api";
 
-const page = () => {
+const PoolDashboardPage = () => {
+  const pools = useQuery(api.pools.getPools);
+
+  if (pools === undefined) {
+    return <div>Loading...</div>;
+  }
+
+  if (pools === null) {
+    return <div>Not found</div>;
+  }
+
   return (
     <div className="flex flex-col h-full ">
       <Navbar page="Deals" />
@@ -55,7 +66,7 @@ const page = () => {
         </div>
 
         <div className="flex flex-col gap-10 my-8  mx-9 ">
-          {cardItem.map((item, index) => (
+          {pools.map((item, index) => (
             <PoolCard item={item} index={index} key={index} />
           ))}
         </div>
@@ -66,4 +77,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default PoolDashboardPage;
