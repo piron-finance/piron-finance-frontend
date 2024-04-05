@@ -101,22 +101,22 @@ export const cardItem = [
 
 export const headerData = [
   {
-    icon: "/dashboard/frame1.svg",
+    icon: "/dashboard/Frame1.svg",
     title: "Total Amount Raised",
     amount: "$2,000,000",
   },
   {
-    icon: "/dashboard/frame2.svg",
+    icon: "/dashboard/Frame2.svg",
     title: "Total Repayment",
     amount: "$500,000",
   },
   {
-    icon: "/dashboard/frame3.svg",
+    icon: "/dashboard/Frame3.svg",
     title: "Total Interest Accrued",
     amount: "$500,000",
   },
   {
-    icon: "/dashboard/frame4.svg",
+    icon: "/dashboard/Frame4.svg",
     title: "Total Deals",
     amount: "450",
   },

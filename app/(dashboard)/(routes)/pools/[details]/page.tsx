@@ -44,7 +44,7 @@ const PoolDetailsPage = () => {
   return (
     <div className="flex flex-col h-full ">
       <Navbar status={pool.poolStatus} page={pool.poolName} dynamic />
-      <Header />
+      <Header pool={pool} />
 
       <div className="flex  ">
         <div className="mx-2 p-8 my-4 bg-white rounded-xl shadow-sm w-3/4 ">
