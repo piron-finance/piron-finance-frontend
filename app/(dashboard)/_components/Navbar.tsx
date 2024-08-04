@@ -4,6 +4,10 @@ import { Separator } from "@/components/ui/separator";
 import { MoveLeft } from "lucide-react";
 import StatusCard from "../(routes)/pools/_components/StatusCard";
 import { useRouter } from "next/navigation";
+import { useAccount } from "wagmi";
+import { useWeb3Modal } from "@web3modal/wagmi/react";
+import CreatePoolModal from "../(routes)/pools/_components/CreatePoolModal";
+import { truncateAddress } from "@/lib/utils";
 
 interface Props {
   page: string;
@@ -13,6 +17,13 @@ interface Props {
 
 const Navbar = ({ page, status, dynamic }: Props) => {
   const router = useRouter();
+  const { isConnected, address } = useAccount();
+  const { open } = useWeb3Modal();
+
+  const handleConnect = () => {
+    open();
+  };
+
   return (
     <div className="mb-3 bg-white shadow-sm ">
       <div className="flex items-center justify-between mx-8 my-5">
@@ -32,9 +43,17 @@ const Navbar = ({ page, status, dynamic }: Props) => {
           </div>
         )}
         <div className="flex gap-2 items-center">
-          <Button className="rounded-full bg-[#007A86]" size="lg">
-            Connect Wallet
-          </Button>
+          {!isConnected ? (
+            <Button onClick={handleConnect}>Connect Wallet</Button>
+          ) : (
+            <p>{truncateAddress(address)}</p>
+          )}
+
+          <CreatePoolModal>
+            <Button className="rounded-full bg-[#007A86]" size="lg">
+              Create Pool
+            </Button>
+          </CreatePoolModal>
         </div>
       </div>
       <Separator />

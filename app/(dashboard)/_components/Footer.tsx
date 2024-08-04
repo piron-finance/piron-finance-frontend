@@ -27,15 +27,15 @@ const navItems = [
 
 const Footer = () => {
   return (
-    <div className="bg-white shadow-sm mt-8">
+    <div className="bg-white shadow-sm mt-8 fixed bottom-0 left-0 w-full">
       <Separator />
-      <div className="flex items-center justify-between  p-6">
+      <div className="flex items-center justify-between p-6">
         <div className="grid grid-cols-2 md:flex gap-1 md:gap-5 my-2">
-          {navItems.map((items, index) => (
+          {navItems.map((items) => (
             <div key={items.name}>
-              <h1 className=" flex gap-4  text-muted-foreground text-sm">
+              <h1 className="flex gap-4 text-muted-foreground text-sm">
                 {items.name}
-                <span className="border-r " />
+                <span className="border-r" />
               </h1>
             </div>
           ))}
@@ -49,5 +49,4 @@ const Footer = () => {
     </div>
   );
 };
-
 export default Footer;
