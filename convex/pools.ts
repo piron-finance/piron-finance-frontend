@@ -23,6 +23,7 @@ export const createPool = mutation({
     closeDate: v.string(),
     assetType: v.string(),
     poolStatus: v.string(),
+    vaultAddress: v.string(),
     health: v.string(),
     maturityDate: v.string(),
     requirements: v.array(v.string()),

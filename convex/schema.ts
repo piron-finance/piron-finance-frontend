@@ -27,6 +27,7 @@ export default defineSchema({
     yield: v.number(),
     launchDate: v.string(),
     closeDate: v.string(),
+    vaultAddress: v.string(),
     assetType: v.string(),
     poolStatus: v.string(),
     health: v.string(),
